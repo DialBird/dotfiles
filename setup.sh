@@ -2,14 +2,24 @@
 
 set -eu
 
-DOT_FILES=(.bashrc .vimrc .vimrc_dein .tmux.conf)
+readonly DOT_FILES=(.bashrc .vimrc .vimrc_dein .tmux.conf)
 
 for file in ${DOT_FILES[@]}; do
+  if grep -q 'keisuke docker dotfiles' $HOME/$file; then
+    echo "$file is skipped"
+    continue
+  fi
+
   if [[ -e $HOME/$file ]]; then
     cat $HOME/docker_dotfiles/$file >> $HOME/$file
+    echo "$file is added"
   else
     ln -s $HOME/docker_dotfiles/$file $HOME/$file
+    echo "$file is linked"
   fi
 done
 
-echo 'completed'
+cat <<EOS
+
+task completed!
+EOS
