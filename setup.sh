@@ -5,7 +5,7 @@ set -eu
 readonly DOT_FILES=(.bashrc .vimrc .vimrc_dein .tmux.conf)
 
 for file in ${DOT_FILES[@]}; do
-  if grep -q 'keisuke docker dotfiles' $HOME/$file; then
+  if grep -s 'keisuke docker dotfiles' $HOME/$file; then
     echo "$file is skipped"
     continue
   fi
