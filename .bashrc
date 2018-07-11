@@ -49,6 +49,7 @@ alias drm='docker rm'
 alias drmi='docker rmi'
 alias dst='docker start'
 alias dstp='docker stop'
+alias doc='docker-compose'
 
 # ------------------------------------------------------
 # export
