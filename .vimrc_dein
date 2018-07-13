@@ -22,6 +22,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('vim-syntastic/syntastic.git')
   call dein#add('nathanaelkane/vim-indent-guides')
   call dein#add('raphamorim/lucario')
+  call dein#add('junegunn/vim-easy-align')
   
   call dein#end()
   call dein#save_state()
