@@ -52,8 +52,13 @@ alias dstp='docker stop'
 alias doc='docker-compose'
 
 # ------------------------------------------------------
+# etc
+# ------------------------------------------------------
+alias be='bundle exec'
+
+# ------------------------------------------------------
 # export
 # ------------------------------------------------------
 export TERM=screen-256color
 export LANG=ja_JP.UTF-8
-export PATH=$PATH:$HOME/.gem/ruby/2.5.0/bin
+export PATH=$PATH:$HOME/.gem/ruby/2.5.0/bin:/usr/local/bundle/bin
