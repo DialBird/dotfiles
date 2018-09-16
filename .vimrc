@@ -104,38 +104,77 @@ let g:neosnippet#snippets_directory = '~/.cache/dein/repos/github.com/Shougo/neo
 "------------------------------------------------------
 " Unite
 "------------------------------------------------------
-nmap <Leader>u [unite]
-nnoremap <silent> [unite]b :Unite buffer<CR>
-nnoremap <silent> [unite]f :Unite file<CR>
-nnoremap <silent> [unite]m :Unite file_mru<CR>
-nnoremap <silent> [unite]s :VimFiler -split -simple -winwidth=35 -no-quit
-call unite#custom#alias('file', 'delete', 'vimfiler__delete')
+" nmap <Leader>u [unite]
+" nnoremap <silent> [unite]b :Unite buffer<CR>
+" nnoremap <silent> [unite]f :Unite file<CR>
+" nnoremap <silent> [unite]m :Unite file_mru<CR>
+" nnoremap <silent> [unite]s :VimFiler -split -simple -winwidth=35 -no-quit
+" call unite#custom#alias('file', 'delete', 'vimfiler__delete')
 
 "------------------------------------------------------
 " Syntastic
 "------------------------------------------------------
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+"
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_loc_list_height = 5
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 1
+"
 " let g:syntastic_ruby_checkers = ['rubocop']
 " let g:syntastic_javascript_checkers = ['eslint']
+"
+" let g:syntastic_error_symbol = 'x'
+" let g:syntastic_style_error_symbol = 'x'
+" let g:syntastic_warning_symbol = 'x'
+" let g:syntastic_style_warning_symbol = 'x'
+"
+" highlight link SyntasticErrorSign SignColumn
+" highlight link SyntasticWarningSign SignColumn
+" highlight link SyntasticStyleErrorSign SignColumn
+" highlight link SyntasticStyleWarningSign SignColum
 
-let g:syntastic_error_symbol = 'x'
-let g:syntastic_style_error_symbol = 'x'
-let g:syntastic_warning_symbol = 'x'
-let g:syntastic_style_warning_symbol = 'x'
+"------------------------------------------------------
+" Ale
+"------------------------------------------------------
+let g:ale_sign_error = '!!'
+let g:ale_sign_warning = '=='
+let g:ale_fix_on_save = 1
+let b:ale_fixers = {'ruby': ['rubocop']}
 
-highlight link SyntasticErrorSign SignColumn
-highlight link SyntasticWarningSign SignColumn
-highlight link SyntasticStyleErrorSign SignColumn
-highlight link SyntasticStyleWarningSign SignColum
+"------------------------------------------------------
+" Ligntline
+"------------------------------------------------------
+set laststatus=2
+let g:lightline = {}
+
+let g:lightline.component_expand = {
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ }
+let g:lightline.component_type = {
+      \     'linter_checking': 'left',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \     'linter_ok': 'left',
+      \ }
+let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
+
+"------------------------------------------------------
+" Vim FZF
+"------------------------------------------------------
+set rtp+=~/.fzf
+nnoremap <C-f> :FZFFileList<CR>
+command! FZFFileList call fzf#run({
+      \ 'source': 'find . -type d \( -name .git -o -name ruby -o -name tmp -o -name log \) -prune -o ! -name .DS_Store',
+      \ 'sink': 'e',
+      \ 'down': '40%'})
+nnoremap <C-h> :History<CR>
 
 "------------------------------------------------------
 " Vim Easy Align
@@ -145,3 +184,12 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+"------------------------------------------------------
+" Vim Ack
+"------------------------------------------------------
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
