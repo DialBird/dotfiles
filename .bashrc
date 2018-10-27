@@ -52,6 +52,14 @@ alias dstp='docker stop'
 alias doc='docker-compose'
 
 # ------------------------------------------------------
+# pyenv
+# ------------------------------------------------------
+if [ -x "$(command -v pyenv)" ]; then
+  export PATH=$PATH:$HOME/.pyenv/bin
+  eval "$(pyenv init -)"
+fi
+
+# ------------------------------------------------------
 # etc
 # ------------------------------------------------------
 alias be='bundle exec'
