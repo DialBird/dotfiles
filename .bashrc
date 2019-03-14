@@ -50,6 +50,8 @@ alias drmi='docker rmi'
 alias dst='docker start'
 alias dstp='docker stop'
 alias doc='docker-compose'
+alias docb='docker-compose build'
+alias doce='docker-compose exec'
 
 # ------------------------------------------------------
 # pyenv
