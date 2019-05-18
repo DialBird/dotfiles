@@ -148,6 +148,7 @@ let b:ale_fixers = {
       \ 'ruby': ['rubocop'],
       \ 'javascript': ['eslint']
       \ }
+let b:ale_javascript_eslint_executable = './node_modules/.bin/eslint'
 
 "------------------------------------------------------
 " Ligntline
@@ -172,7 +173,7 @@ let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'lint
 "------------------------------------------------------
 " Vim FZF
 "------------------------------------------------------
-set rtp+=~/.fzf
+set rtp+=/usr/local/opt/fzf
 nnoremap <C-f> :FZFFileList<CR>
 command! FZFFileList call fzf#run({
       \ 'source': 'find . -type d \( -name .git -o -name ruby -o -name tmp -o -name log \) -prune -o ! -name .DS_Store',

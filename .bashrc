@@ -65,6 +65,7 @@ fi
 # etc
 # ------------------------------------------------------
 alias be='bundle exec'
+alias ctags="`brew --prefix`/bin/ctags"
 
 # ------------------------------------------------------
 # export
@@ -72,3 +73,10 @@ alias be='bundle exec'
 export TERM=screen-256color
 export LANG=ja_JP.UTF-8
 export PATH=$PATH:$HOME/.gem/ruby/2.5.0/bin:/usr/local/bundle/bin
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# rbenv
+export PATH=$PATH:$HOME/.rbenv/bin
+eval "$(rbenv init -)"
