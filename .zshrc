@@ -44,6 +44,7 @@ alias gr='git reset'
 alias gs='git status'
 alias gst='git stash'
 alias gstk='git stash --keep-index'
+alias gich='git fetch'
 
 # ------------------------------------------------------
 # docker
