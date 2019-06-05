@@ -15,6 +15,7 @@ fi
 # ------------------------------------------------------
 autoload -U promptinit; promptinit
 prompt pure
+setopt share_history
 
 # ------------------------------------------------------
 # config
