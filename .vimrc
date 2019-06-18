@@ -41,6 +41,7 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader><Leader>c :e++enc=cp932<CR>
 nnoremap <Leader><Leader>s :e++enc=sjis<CR>
 nnoremap <Leader><Leader>u :e++enc=urf8<CR>
+vnoremap <Leader>k :s/_\(.\)/\u\1/g<CR>
 inoremap <silent> jj <ESC>
 
 " dein
@@ -100,42 +101,6 @@ if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
 let g:neosnippet#snippets_directory = '~/.cache/dein/repos/github.com/Shougo/neosnippet-snippets/neosnippets/'
-
-"------------------------------------------------------
-" Unite
-"------------------------------------------------------
-" nmap <Leader>u [unite]
-" nnoremap <silent> [unite]b :Unite buffer<CR>
-" nnoremap <silent> [unite]f :Unite file<CR>
-" nnoremap <silent> [unite]m :Unite file_mru<CR>
-" nnoremap <silent> [unite]s :VimFiler -split -simple -winwidth=35 -no-quit
-" call unite#custom#alias('file', 'delete', 'vimfiler__delete')
-
-"------------------------------------------------------
-" Syntastic
-"------------------------------------------------------
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-"
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_loc_list_height = 5
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 1
-"
-" let g:syntastic_ruby_checkers = ['rubocop']
-" let g:syntastic_javascript_checkers = ['eslint']
-"
-" let g:syntastic_error_symbol = 'x'
-" let g:syntastic_style_error_symbol = 'x'
-" let g:syntastic_warning_symbol = 'x'
-" let g:syntastic_style_warning_symbol = 'x'
-"
-" highlight link SyntasticErrorSign SignColumn
-" highlight link SyntasticWarningSign SignColumn
-" highlight link SyntasticStyleErrorSign SignColumn
-" highlight link SyntasticStyleWarningSign SignColum
 
 "------------------------------------------------------
 " Ale
