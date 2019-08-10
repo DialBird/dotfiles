@@ -15,7 +15,7 @@ fi
 # ------------------------------------------------------
 autoload -U promptinit; promptinit
 prompt pure
-setopt share_history
+setopt SHARE_HISTORY
 
 # ------------------------------------------------------
 # config
@@ -66,8 +66,7 @@ alias docr='docker-compose run'
 # ------------------------------------------------------
 # python
 # ------------------------------------------------------
-if [ -x "$(command -v pyenv)" ]; then
-  export PATH=$PATH:$HOME/.pyenv/bin
+if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
@@ -93,3 +92,19 @@ export SLASHUB_PORT=3030
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/dialbird/.pyenv/versions/anaconda3-5.3.0/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/dialbird/.pyenv/versions/anaconda3-5.3.0/etc/profile.d/conda.sh" ]; then
+        . "/Users/dialbird/.pyenv/versions/anaconda3-5.3.0/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/dialbird/.pyenv/versions/anaconda3-5.3.0/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
