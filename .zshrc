@@ -77,6 +77,41 @@ export PATH=$PATH:$HOME/.rbenv/bin
 eval "$(rbenv init -)"
 
 # ------------------------------------------------------
+# Suffix Aliases
+# ------------------------------------------------------
+function with_echo() {
+  echo $@
+  $@
+}
+function cpp_compile() {
+  with_echo g++ -std=c++14 -g -O0 -o $1 $2
+}
+function cpp_run() {
+  cpp_file=$1
+  exe_file=${cpp_file:0:-4}
+  shift
+
+  if [ -s $cpp_file ]; then
+    if [ ! -f $exe_file ]; then
+      cpp_compile $exe_file $cpp_file && ./$exe_file $@
+    else
+      cpp_date=`date -r $cpp_file +%s`
+      exe_date=`date -r $exe_file +%s`
+      if [ $cpp_date -gt $exe_date ]; then
+        cpp_compile $exe_file $cpp_file && ./$exe_file $@
+      else
+        ./$exe_file $@
+      fi
+    fi
+  else
+    echo $cpp_file is empty
+  fi
+}
+alias -s cpp=cpp_run
+alias -s py=python
+alias -s rb=ruby
+
+# ------------------------------------------------------
 # etc
 # ------------------------------------------------------
 alias be='bundle exec'
@@ -107,4 +142,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
