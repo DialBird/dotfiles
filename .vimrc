@@ -108,11 +108,14 @@ let g:neosnippet#snippets_directory = '~/.cache/dein/repos/github.com/Shougo/neo
 let g:ale_sign_error = '!!'
 let g:ale_sign_warning = '=='
 let g:ale_fix_on_save = 1
-let g:ale_linters = {'html': []}
-let b:ale_fixers = {
-      \ 'javascript': ['eslint'],
-      \ 'python': ['autopep8'],
+let g:ale_linters = {
+      \ 'html': [],
+      \ 'cpp': ['gcc'],
+      \ 'python': ['pylint'],
       \ 'ruby': ['rubocop']
+      \ }
+let b:ale_fixers = {
+      \ 'javascript': ['eslint']
       \ }
 let b:ale_javascript_eslint_executable = './node_modules/.bin/eslint'
 
