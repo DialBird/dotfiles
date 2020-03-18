@@ -1,4 +1,4 @@
-" keisuke docker dotfiles
+" keisuke dotfiles
 "
 " if you use dein
 au!

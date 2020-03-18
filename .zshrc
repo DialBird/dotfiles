@@ -1,3 +1,4 @@
+# keisuke dotfiles
 #
 # Executes commands at the start of an interactive session.
 #
@@ -20,8 +21,18 @@ prompt pure
 setopt SHARE_HISTORY
 
 # ------------------------------------------------------
+# command
+# ------------------------------------------------------
+alias l='ls'
+alias la='ls -a'
+alias ll='ls -l'
+alias his='history'
+
+# ------------------------------------------------------
 # config
 # ------------------------------------------------------
+alias bashp='vim ~/.bash_profile'
+alias bashrc='vim ~/.bashrc'
 alias szsh='source ~/.zshrc'
 alias tcnf='vim ~/.tmux.conf'
 alias vimrc='vim ~/.vimrc'
