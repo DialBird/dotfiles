@@ -87,6 +87,12 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # ------------------------------------------------------
+# PHP
+# ------------------------------------------------------
+alias cdmamp='cd /Applications/MAMP/htdocs'
+alias phpmamp=/Applications/MAMP/bin/php/php7.4.2/bin/php
+
+# ------------------------------------------------------
 # ruby
 # ------------------------------------------------------
 export PATH=$PATH:$HOME/.rbenv/bin
