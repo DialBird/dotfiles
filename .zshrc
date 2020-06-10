@@ -99,6 +99,12 @@ export PATH=$PATH:$HOME/.rbenv/bin
 eval "$(rbenv init -)"
 
 # ------------------------------------------------------
+# gcloud
+# ------------------------------------------------------
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/dialbird/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/dialbird/google-cloud-sdk/path.zsh.inc'; fi
+
+# ------------------------------------------------------
 # Suffix Aliases
 # ------------------------------------------------------
 function with_echo() {
