@@ -73,12 +73,18 @@ hi vimfilerClosedFile ctermfg=46
 hi vimfilerNonMark ctermfg=46
 hi vimfilerMarkedFile ctermfg=11
 
+augroup SyntaxSettings
+  au!
+  au BufNewFile,BufRead *.tsx set filetype=typescript
+augroup END
+
 "------------------------------------------------------
 " indent config
 "------------------------------------------------------
 augroup fileTypeIndent
   au!
-  " au BufNewFile,BufRead *.c setlocal tabstop=4 softtabstop=4 shiftwidth=4
+  au BufNewFile,BufRead *.php setlocal tabstop=4 softtabstop=4 shiftwidth=4
+  au BufNewFile,BufRead *blade.php setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
 "------------------------------------------------------
