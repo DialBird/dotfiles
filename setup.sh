@@ -2,7 +2,7 @@
 
 set -eu
 
-readonly DOT_FILES=(.bashrc .vimrc .vimrc_dein .tmux.conf .zshrc .zpreztorc .zprofile)
+readonly DOT_FILES=(.bashrc .gitconfig .git_template .vimrc .vimrc_dein .tmux.conf .zshrc .zpreztorc .zprofile)
 
 for file in ${DOT_FILES[@]}; do
   if grep -s 'keisuke dotfiles' $HOME/$file; then

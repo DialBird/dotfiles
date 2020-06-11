@@ -1,0 +1,12 @@
+[core]
+  editor = vim
+  pager = less
+  quotepath = false
+  ui = true
+[credential]
+  helper = store
+[init]
+  templatedir = ~/.git_template
+[user]
+  email = rememberthatk@icloud.com
+  name = Keisuke Taniguchi
