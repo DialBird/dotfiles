@@ -4,6 +4,10 @@ snippet imp
 snippet imp-rea
   import React from 'react'
 
+snippet constf
+  const ${0} = () => {
+  }
+
 snippet ret
   return (
     ${0}
@@ -57,12 +61,12 @@ snippet expect
 snippet usee
   useEffect(() => {
     ${0}
-  })
+  }, [])
 
 snippet usec
   useCallback(() => {
     ${0}
-  })
+  }, [])
 
 snippet gss
   export const getServerSideProps = async ctx => {

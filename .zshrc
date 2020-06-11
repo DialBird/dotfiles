@@ -80,23 +80,37 @@ alias doce='docker-compose exec'
 alias docr='docker-compose run'
 
 # ------------------------------------------------------
-# python
+# Node
 # ------------------------------------------------------
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+export PATH=$PATH:$HOME/.nodebrew/current/bin
 
 # ------------------------------------------------------
 # PHP
 # ------------------------------------------------------
 alias cdmamp='cd /Applications/MAMP/htdocs'
-alias phpmamp=/Applications/MAMP/bin/php/php7.4.2/bin/php
+
+export PHP_VERSION=7.4.2
+export PATH=/Applications/MAMP/bin/php/php$PHP_VERSION/bin:$PATH
 
 # ------------------------------------------------------
-# ruby
+# Python
 # ------------------------------------------------------
-export PATH=$PATH:$HOME/.rbenv/bin
-eval "$(rbenv init -)"
+if command -v pyenv 1>/dev/null 2>&1; then
+  export PATH=$PATH:$HOME/.pyenv/bin
+
+  eval "$(pyenv init -)"
+fi
+
+# ------------------------------------------------------
+# Ruby
+# ------------------------------------------------------
+if command -v pyenv 1>/dev/null 2>&1; then
+  alias be='bundle exec'
+
+  export PATH=$PATH:$HOME/.rbenv/bin
+
+  eval "$(rbenv init -)"
+fi
 
 # ------------------------------------------------------
 # gcloud
@@ -142,34 +156,9 @@ alias -s rb=ruby
 # ------------------------------------------------------
 # etc
 # ------------------------------------------------------
-alias be='bundle exec'
 alias ctags="`brew --prefix`/bin/ctags"
 
-# ------------------------------------------------------
-# export
-# ------------------------------------------------------
 export TERM=screen-256color
 export LANG=ja_JP.UTF-8
-export PATH=$PATH:$HOME/.gem/ruby/2.5.0/bin:/usr/local/bundle/bin
-export SLASHUB_PORT=3030
-export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/dialbird/.pyenv/versions/anaconda3-5.3.0/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/dialbird/.pyenv/versions/anaconda3-5.3.0/etc/profile.d/conda.sh" ]; then
-        . "/Users/dialbird/.pyenv/versions/anaconda3-5.3.0/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/dialbird/.pyenv/versions/anaconda3-5.3.0/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
