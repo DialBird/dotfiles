@@ -3,6 +3,7 @@
 " if you use dein
 au!
 source ~/.vimrc_dein
+let g:dein#auto_recache = 1
 
 "------------------------------------------------------
 " option
@@ -44,11 +45,6 @@ nnoremap <Leader><Leader>u :e++enc=urf8<CR>
 vnoremap <Leader>k :s/_\(.\)/\u\1/g<CR>
 inoremap <silent> jj <ESC>
 
-" dein
-nnoremap <Leader>du :call dein#update()<CR>
-nnoremap <Leader>dc :call map(dein#check_clean(), "delete(v:val, 'rf')")<CR>
-nnoremap <Leader>dr :call dein#recache_runtimepath()<CR>
-
 "------------------------------------------------------
 " color
 " syntaxはなんか正規表現とかのエラーが出る場合にはコメントアウトする(プラグイン以降はもんだいなし)
@@ -72,11 +68,21 @@ hi vimfilerNormalFile ctermfg=15
 hi vimfilerClosedFile ctermfg=46
 hi vimfilerNonMark ctermfg=46
 hi vimfilerMarkedFile ctermfg=11
+hi link typescriptImport Include
+hi link typescriptExport Include
 
 augroup SyntaxSettings
   au!
-  au BufNewFile,BufRead *.tsx set filetype=typescript
+  au BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 augroup END
+
+" check what synstack working
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
 "------------------------------------------------------
 " indent config
@@ -106,7 +112,10 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expan
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
-let g:neosnippet#snippets_directory = '~/.cache/dein/repos/github.com/Shougo/neosnippet-snippets/neosnippets/'
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory = '~/dotfiles/neosnippets/'
+" ORIGIN
+" let g:neosnippet#snippets_directory = '~/.cache/dein/repos/github.com/Shougo/neosnippet-snippets/neosnippets/'
 
 "------------------------------------------------------
 " Ale
