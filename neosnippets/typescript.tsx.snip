@@ -1,0 +1,77 @@
+snippet imp
+  import ${1} from ${0}
+
+snippet imp-rea
+  import React from 'react'
+
+snippet ret
+  return (
+    ${0}
+  )
+
+snippet expd
+  export default ${0}
+
+snippet expc
+  export const ${0}
+
+snippet switch
+  switch (${1}) {
+    case:
+      break;
+    default:
+      return
+  }
+
+snippet if
+  if ${1} {
+    ${0}
+  }
+
+snippet log
+  console.log(${0})
+
+snippet desc
+  describe('${1}', () => {
+    ${0}
+  })
+
+snippet test
+  test('${1}', () => {
+    ${0}
+  })
+
+snippet befe
+  beforeEach(() => {
+    ${0}
+  })
+
+snippet afe
+  afterEach(() => {
+    ${0}
+  })
+
+snippet expect
+  expect(${1}).toBe(${0})
+
+snippet usee
+  useEffect(() => {
+    ${0}
+  })
+
+snippet usec
+  useCallback(() => {
+    ${0}
+  })
+
+snippet gss
+  export const getServerSideProps = async ctx => {
+    return {
+      props: {}
+    }
+  }
+
+snippet usem
+  React.memo((${1}) => {
+    ${0}
+  })
