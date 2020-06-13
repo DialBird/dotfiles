@@ -179,6 +179,6 @@ nmap ga <Plug>(EasyAlign)
 "------------------------------------------------------
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
+  cnoreabbrev Ack Ack!
+  nnoremap <Leader>a :Ack!<Space>
 endif
-cnoreabbrev Ack Ack!
-nnoremap <Leader>a :Ack!<Space>

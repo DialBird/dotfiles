@@ -8,7 +8,7 @@ $ cd dotfiles && ./setup.sh
 # pureというcolorテーマを使っている
 $ npm install --global pure-prompt
 
-# fzfをインストールして、Ctrl+rを使えるように
-$ brew install fzf
+# 必要なagとfzfをインストール
+$ brew install ag fzf
 $ $(brew --prefix)/opt/fzf/install
 ```
