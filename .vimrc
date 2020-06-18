@@ -51,10 +51,14 @@ inoremap <silent> jj <ESC>
 "------------------------------------------------------
 syntax on
 set background=dark
+let g:solarized_italic=0
+let g:solarized_termtrans=1
 let g:solarized_termcolors=256
+let g:solarized_underline=0
+call togglebg#map("<F5>")
 colorscheme solarized
-let &colorcolumn=join(range(81,999),",")
-hi ColorColumn ctermbg=235
+set textwidth=80
+set colorcolumn=+1
 hi Visual ctermbg=33
 
 " Without ColorScheme Plugins
