@@ -49,8 +49,10 @@ inoremap <silent> jj <ESC>
 " color
 " syntaxはなんか正規表現とかのエラーが出る場合にはコメントアウトする(プラグイン以降はもんだいなし)
 "------------------------------------------------------
-syntax on 
-colorscheme lucario
+syntax on
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
 let &colorcolumn=join(range(81,999),",")
 hi ColorColumn ctermbg=235
 hi Visual ctermbg=33

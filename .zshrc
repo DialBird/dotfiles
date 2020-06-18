@@ -88,6 +88,7 @@ export PATH=$PATH:$HOME/.nodebrew/current/bin
 # PHP
 # ------------------------------------------------------
 alias cdmamp='cd /Applications/MAMP/htdocs'
+export PATH=$PATH:/Applications/MAMP/Library/bin
 
 export PHP_VERSION=7.4.2
 export PATH=/Applications/MAMP/bin/php/php$PHP_VERSION/bin:$PATH
