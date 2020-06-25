@@ -59,6 +59,7 @@ call togglebg#map("<F5>")
 colorscheme solarized
 set textwidth=80
 set colorcolumn=+1
+set formatoptions-=t
 hi Visual ctermbg=33
 
 " Without ColorScheme Plugins
@@ -130,15 +131,15 @@ let g:ale_sign_error = '!!'
 let g:ale_sign_warning = '=='
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
-      \ 'html': [],
       \ 'cpp': ['gcc'],
+      \ 'html': [],
       \ 'python': ['pylint'],
-      \ 'ruby': ['rubocop']
+      \ 'ruby': ['rubocop'],
       \ }
-let b:ale_fixers = {
-      \ 'javascript': ['eslint']
+let g:ale_fixers = {
+      \ 'javascript': ['prettier', 'eslint'],
+      \ 'typescript': ['prettier', 'eslint'],
       \ }
-let b:ale_javascript_eslint_executable = './node_modules/.bin/eslint'
 
 "------------------------------------------------------
 " Ligntline
