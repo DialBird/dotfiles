@@ -133,11 +133,12 @@ let g:ale_fix_on_save = 1
 let g:ale_linters = {
       \ 'cpp': ['gcc'],
       \ 'html': [],
-      \ 'python': ['pylint'],
+      \ 'python': ['flake8'],
       \ 'ruby': ['rubocop'],
       \ }
 let g:ale_fixers = {
       \ 'javascript': ['prettier', 'eslint'],
+      \ 'python': ['autopep8', 'black', 'isort'],
       \ 'typescript': ['prettier', 'eslint'],
       \ }
 
