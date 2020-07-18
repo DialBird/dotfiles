@@ -81,6 +81,7 @@ hi link typescriptExport Include
 augroup SyntaxSettings
   au!
   au BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+  au BufNewFile,BufRead *.graphql,*.gql setfiletype graphql
 augroup END
 
 " check what synstack working
@@ -130,6 +131,10 @@ let g:neosnippet#snippets_directory = '~/dotfiles/neosnippets/'
 let g:ale_sign_error = '!!'
 let g:ale_sign_warning = '=='
 let g:ale_fix_on_save = 1
+let g:ale_javascript_eslint_executable = 'npx eslint'
+let g:ale_javascript_prettier_executable = 'npx prettier'
+let g:ale_typescript_eslint_executable = 'npx eslint'
+let g:ale_typescript_prettier_executable = 'npx prettier'
 let g:ale_linters = {
       \ 'cpp': ['gcc'],
       \ 'html': [],
@@ -146,21 +151,32 @@ let g:ale_fixers = {
 " Ligntline
 "------------------------------------------------------
 set laststatus=2
-let g:lightline = {}
-
-let g:lightline.component_expand = {
-      \  'linter_checking': 'lightline#ale#checking',
-      \  'linter_warnings': 'lightline#ale#warnings',
-      \  'linter_errors': 'lightline#ale#errors',
-      \  'linter_ok': 'lightline#ale#ok',
-      \ }
-let g:lightline.component_type = {
+let g:lightline = {
+      \ 'active': {
+      \     'right': [
+      \         [
+      \           'linter_checking',
+      \           'linter_errors',
+      \           'linter_warnings',
+      \           'linter_ok'
+      \         ],
+      \         ['fileencoding']
+      \     ]
+      \ },
+      \ 'colorscheme': 'solarized',
+      \ 'component_expand': {
+      \     'linter_checking': 'lightline#ale#checking',
+      \     'linter_warnings': 'lightline#ale#warnings',
+      \     'linter_errors': 'lightline#ale#errors',
+      \     'linter_ok': 'lightline#ale#ok',
+      \ },
+      \ 'component_type': {
       \     'linter_checking': 'left',
       \     'linter_warnings': 'warning',
       \     'linter_errors': 'error',
       \     'linter_ok': 'left',
+      \ },
       \ }
-let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
 
 "------------------------------------------------------
 " Vim FZF
