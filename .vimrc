@@ -147,6 +147,10 @@ let g:ale_fixers = {
       \ 'typescript': ['prettier', 'eslint'],
       \ }
 
+nnoremap <Leader>d :ALEDetail<CR>
+nnoremap <Leader>g :ALEGoToDefinition<CR>
+nnoremap <Leader>h :ALEHover<CR>
+
 "------------------------------------------------------
 " Ligntline
 "------------------------------------------------------

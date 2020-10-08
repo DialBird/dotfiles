@@ -80,8 +80,8 @@ snippet usem
     ${0}
   })
 
-snippet usecont
-  import { ReactNode, createContext, useContext } from 'react'
+snippet usecontext
+  import React, { ReactNode, createContext, useContext } from 'react'
 
   interface I${1}Context {}
 
@@ -104,3 +104,24 @@ snippet usecont
   }
 
   export default use$1Context
+
+snippet usefcm
+  import React, { memo } from 'react'
+
+  const ${1}Raw = () => {
+    return (
+      <div>$1</div>
+    )
+  }
+
+  export const $1 = memo($1Raw)
+
+snippet sett
+  setTimeout(() => {
+    ${0}
+  }, ${1})
+
+snippet seti
+  setInterval(() => {
+    ${0}
+  }, ${1})
