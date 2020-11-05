@@ -20,8 +20,30 @@ bindkey '^[[B' down-line-or-search
 # zshrc
 # ------------------------------------------------------
 autoload -U promptinit; promptinit
+zstyle :prompt:pure:execution_time color 196
+zstyle :prompt:pure:git:branch color 202
+zstyle :prompt:pure:path color 214
 prompt pure
 setopt SHARE_HISTORY
+
+# ------------------------------------------------------
+# zplug
+# https://github.com/zplug/zplug
+# ------------------------------------------------------
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+zplug "lukechilds/zsh-nvm"
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
+fi
+
+# Then, source plugins and add commands to $PATH
+# zplug load --verbose
 
 # ------------------------------------------------------
 # command
@@ -62,6 +84,8 @@ alias gst='git stash'
 alias gstk='git stash --keep-index'
 alias gich='git fetch'
 
+alias ghproj='open https://github.com/remotehour/remotehour/projects/2'
+
 # ------------------------------------------------------
 # docker
 # ------------------------------------------------------
@@ -78,11 +102,6 @@ alias doc='docker-compose'
 alias docb='docker-compose build'
 alias doce='docker-compose exec'
 alias docr='docker-compose run'
-
-# ------------------------------------------------------
-# Node
-# ------------------------------------------------------
-export PATH=$PATH:$HOME/.nodebrew/current/bin
 
 # ------------------------------------------------------
 # PHP
@@ -163,3 +182,6 @@ export TERM=screen-256color
 export LANG=ja_JP.UTF-8
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# vim -> nvim
+alias vim="nvim"

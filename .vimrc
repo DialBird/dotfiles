@@ -102,6 +102,14 @@ augroup fileTypeIndent
 augroup END
 
 "------------------------------------------------------
+" indent config
+"------------------------------------------------------
+augroup concealType
+  au!
+  au BufNewFile,BufRead *.md set conceallevel=0
+augroup END
+
+"------------------------------------------------------
 " EasyMotion
 "------------------------------------------------------
 nmap <Leader><CR> <Plug>(easymotion-prefix)
@@ -133,6 +141,7 @@ let g:ale_sign_warning = '=='
 let g:ale_fix_on_save = 1
 let g:ale_javascript_eslint_executable = 'npx eslint'
 let g:ale_javascript_prettier_executable = 'npx prettier'
+let g:ale_json_prettier_executable = 'npx prettier'
 let g:ale_typescript_eslint_executable = 'npx eslint'
 let g:ale_typescript_prettier_executable = 'npx prettier'
 let g:ale_linters = {
@@ -143,6 +152,7 @@ let g:ale_linters = {
       \ }
 let g:ale_fixers = {
       \ 'javascript': ['prettier', 'eslint'],
+      \ 'json': ['prettier'],
       \ 'python': ['autopep8', 'black', 'isort'],
       \ 'typescript': ['prettier', 'eslint'],
       \ }
@@ -210,3 +220,5 @@ if executable('ag')
   cnoreabbrev Ack Ack!
   nnoremap <Leader>a :Ack!<Space>
 endif
+
+let g:vim_markdown_folding_disabled = 1
