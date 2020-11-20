@@ -7,6 +7,12 @@
   helper = store
 [init]
   templatedir = ~/.git_template
+	defaultBranch = master
 [user]
   email = rememberthatk@icloud.com
   name = Keisuke Taniguchi
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

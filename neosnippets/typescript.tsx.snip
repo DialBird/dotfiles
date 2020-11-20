@@ -105,6 +105,15 @@ snippet usecontext
 
   export default use$1Context
 
+snippet usefc
+  import React from 'react'
+
+  export const ${1} = () => {
+    return (
+      <div>$1</div>
+    )
+  }
+
 snippet usefcm
   import React, { memo } from 'react'
 

@@ -141,7 +141,6 @@ let g:ale_sign_warning = '=='
 let g:ale_fix_on_save = 1
 let g:ale_javascript_eslint_executable = 'npx eslint'
 let g:ale_javascript_prettier_executable = 'npx prettier'
-let g:ale_json_prettier_executable = 'npx prettier'
 let g:ale_typescript_eslint_executable = 'npx eslint'
 let g:ale_typescript_prettier_executable = 'npx prettier'
 let g:ale_linters = {
@@ -152,7 +151,6 @@ let g:ale_linters = {
       \ }
 let g:ale_fixers = {
       \ 'javascript': ['prettier', 'eslint'],
-      \ 'json': ['prettier'],
       \ 'python': ['autopep8', 'black', 'isort'],
       \ 'typescript': ['prettier', 'eslint'],
       \ }
