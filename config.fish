@@ -20,6 +20,7 @@ alias gca='git commit --amend'
 alias gch='git checkout'
 alias gchp='git cherry-pick'
 alias gd='git diff'
+alias gdc='git diff --cached'
 alias gl='git log'
 alias gp='git push'
 alias gr='git reset'
@@ -41,3 +42,21 @@ alias doc='docker-compose'
 alias docb='docker-compose build'
 alias doce='docker-compose exec'
 alias docr='docker-compose run'
+
+# ------------------------------------------------------
+# pyenv
+# ------------------------------------------------------
+pyenv init - | source
+
+# ------------------------------------------------------
+# rbenv
+# ------------------------------------------------------
+status --is-interactive; and source (rbenv init -|psub)
+
+
+# ------------------------------------------------------
+# env
+# ------------------------------------------------------
+set -g theme_powerline_fonts no
+set -g theme_nerd_fonts yes
+set -g theme_display_nvm yes
