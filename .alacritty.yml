@@ -1,3 +1,6 @@
+key_bindings:
+  - { key: Space, mods: Control, chars: "\x00" } # avoid affection to tmux prefix
+
 # Colors (Solarized Dark)
 schemes:
   solarized_dark: &dark
