@@ -21,3 +21,31 @@ snippet doc
   /**
    * ${0}
    */
+
+snippet uses
+  const [${1}, set%ucfirst($1)] = useState(${0})
+
+snippet usecontext
+  import React, { ReactNode, createContext, useContext } from 'react'
+
+  interface I${1}Context {}
+
+  const $1Context = createContext<I$1Context>(null!)
+
+  export const $1Provider = ({ children }: { children: ReactNode }) => {
+    return (
+      <$1Context.Provider value={{}}>{children}</$1Context.Provider>
+    )
+  }
+
+  const use$1Context = () => {
+    const context = useContext($1Context)
+    if (!context) {
+      throw new Error(
+        'use$1Context must be used within the $1Provider',
+      )
+    }
+    return context
+  }
+
+  export default use$1Context

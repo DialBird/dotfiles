@@ -60,7 +60,7 @@ status --is-interactive; and source (rbenv init -|psub)
 set -g theme_powerline_fonts no
 set -g theme_nerd_fonts yes
 set -g theme_display_nvm yes
-set -U FZF_LEGACY_KEYBINDINGS 0
+set -g FZF_LEGACY_KEYBINDINGS 0
 
 function bind_bang
     switch (commandline -t)[-1]

@@ -1,6 +1,9 @@
 key_bindings:
   - { key: Space, mods: Control, chars: "\x00" } # avoid affection to tmux prefix
 
+selection:
+  semantic_escape_chars: "()[]{}<>|:=-/,\t\'\" "
+
 # Colors (Solarized Dark)
 schemes:
   solarized_dark: &dark
