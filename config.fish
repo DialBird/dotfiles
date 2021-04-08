@@ -60,7 +60,8 @@ status --is-interactive; and source (rbenv init -|psub)
 set -g theme_powerline_fonts no
 set -g theme_nerd_fonts yes
 set -g theme_display_nvm yes
-set -g FZF_LEGACY_KEYBINDINGS 0
+set -x FZF_LEGACY_KEYBINDINGS 0
+set -x PATH $HOME/.rbenv/bin $PATH
 
 function bind_bang
     switch (commandline -t)[-1]
@@ -86,3 +87,6 @@ function fish_user_key_bindings
     bind '$' bind_dollar
 end
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/dialbird/google-cloud-sdk/path.fish.inc' ]; . '/Users/dialbird/google-cloud-sdk/path.fish.inc'; end
