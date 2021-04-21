@@ -44,6 +44,22 @@ alias doce='docker-compose exec'
 alias docr='docker-compose run'
 
 # ------------------------------------------------------
+# env
+# ------------------------------------------------------
+set -g theme_powerline_fonts no
+set -g theme_nerd_fonts yes
+set -g theme_display_nvm yes
+set -x FZF_LEGACY_KEYBINDINGS 0
+set -x PATH $HOME/.rbenv/bin $PATH
+set -x PATH /opt/homebrew/bin $PATH
+
+# ------------------------------------------------------
+# java
+# ------------------------------------------------------
+set -g fish_user_paths "/opt/homebrew/opt/openjdk/bin" $fish_user_paths
+set -gx CPPFLAGS "-I/opt/homebrew/opt/openjdk/include"
+
+# ------------------------------------------------------
 # pyenv
 # ------------------------------------------------------
 pyenv init - | source
@@ -53,16 +69,14 @@ pyenv init - | source
 # ------------------------------------------------------
 status --is-interactive; and source (rbenv init -|psub)
 
+# ------------------------------------------------------
+# imagemagick
+# ------------------------------------------------------
+set -g fish_user_paths "/opt/homebrew/opt/gnu-getopt/bin" $fish_user_paths
 
 # ------------------------------------------------------
-# env
+# function
 # ------------------------------------------------------
-set -g theme_powerline_fonts no
-set -g theme_nerd_fonts yes
-set -g theme_display_nvm yes
-set -x FZF_LEGACY_KEYBINDINGS 0
-set -x PATH $HOME/.rbenv/bin $PATH
-
 function bind_bang
     switch (commandline -t)[-1]
         case "!"
@@ -87,6 +101,14 @@ function fish_user_key_bindings
     bind '$' bind_dollar
 end
 
+function webp2png
+  dwebp -o $argv.png $argv.webp
+end
+
+function heic2png
+  magick convert $argv.{heic,png}
+end
+
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/dialbird/google-cloud-sdk/path.fish.inc' ]; . '/Users/dialbird/google-cloud-sdk/path.fish.inc'; end
+if [ -f '/Users/coolooky/google-cloud-sdk/path.fish.inc' ]; . '/Users/coolooky/google-cloud-sdk/path.fish.inc'; end
