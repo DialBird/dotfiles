@@ -101,14 +101,21 @@ function fish_user_key_bindings
     bind '$' bind_dollar
 end
 
+function rootname
+  echo $argv | sed 's/\.[^.]*$//'
+end
+
 function webp2png
-  dwebp -o $argv.png $argv.webp
+  set pngFileName (rootname $argv).png
+  dwebp -o $pngFileName $argv
+  echo converted to $pngFileName
 end
 
 function heic2png
-  magick convert $argv.{heic,png}
+  set pngFileName (rootname $argv).png
+  magick convert $argv $pngFileName
+  echo converted to $pngFileName
 end
-
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/coolooky/google-cloud-sdk/path.fish.inc' ]; . '/Users/coolooky/google-cloud-sdk/path.fish.inc'; end
