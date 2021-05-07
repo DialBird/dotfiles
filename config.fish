@@ -117,5 +117,11 @@ function heic2png
   echo converted to $pngFileName
 end
 
+function mov2gif
+  set movFileName (rootname $argv).mov
+  ffmpeg -i $argv -r 10 $movFileName.gif
+  echo converted to $movFileName.gif
+end
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/coolooky/google-cloud-sdk/path.fish.inc' ]; . '/Users/coolooky/google-cloud-sdk/path.fish.inc'; end
