@@ -118,9 +118,15 @@ function heic2png
 end
 
 function mov2gif
-  set movFileName (rootname $argv).mov
-  ffmpeg -i $argv -r 10 $movFileName.gif
-  echo converted to $movFileName.gif
+  set gifFileName (rootname $argv).gif
+  ffmpeg -i $argv -r 10 $gifFileName
+  echo converted to $gifFileName
+end
+
+function svg2o
+  set svgFileName (rootname $argv)_optimized.svg
+  svgo $argv -o $svgFileName
+  echo converted to $svgFileName
 end
 
 # The next line updates PATH for the Google Cloud SDK.
