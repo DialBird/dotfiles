@@ -31,7 +31,8 @@ alias gich='git fetch'
 # Docker
 alias dec='docker exec -it'
 alias dimgs='docker images'
-alias dp='docker ps --format "table {{.Names}}\t{{.Ports}}"'
+# alias dp='docker ps --format "table {{.Names}}\t{{.Ports}}"'
+alias dp='docker ps'
 alias dpa='dp -a'
 alias dr='docker run --name'
 alias drm='docker rm'
@@ -50,18 +51,30 @@ set -g theme_powerline_fonts no
 set -g theme_nerd_fonts yes
 set -g theme_display_nvm yes
 set -x FZF_LEGACY_KEYBINDINGS 0
+set -x GOPATH $HOME/go
+set -x PATH $GOPATH/bin $PATH
 set -x PATH $HOME/.rbenv/bin $PATH
 set -x PATH /opt/homebrew/bin $PATH
+set -x PATH $HOME/.cargo/bin $PATH
+set -x PATH /opt/homebrew/opt/openssl@1.1/bin $PATH
+set -x LDFLAGS -L/opt/homebrew/opt/openssl@1.1/lib
+set -x CPPFLAGS -I/opt/homebrew/opt/openssl@1.1/include
+set -x PKG_CONFIG_PATH /opt/homebrew/opt/openssl@1.1/lib/pkgconfig
+# set -x RUBY_CONFIGURE_OPTS --with-openssl-dir=/opt/homebrew/opt/openssl@1.1
+set -x RUBY_CONFIGURE_OPTS --with-openssl-dir=/opt/homebrew/opt/openssl@1.0
 
 # ------------------------------------------------------
 # java
 # ------------------------------------------------------
-set -g fish_user_paths "/opt/homebrew/opt/openjdk/bin" $fish_user_paths
+set -x PATH "/opt/homebrew/opt/openjdk/bin" $PATH
 set -gx CPPFLAGS "-I/opt/homebrew/opt/openjdk/include"
 
 # ------------------------------------------------------
 # pyenv
 # ------------------------------------------------------
+set -x PYENV_ROOT $HOME/.pyenv
+set -x PATH $PYENV_ROOT/bin $PATH
+status is-login; and pyenv init --path | source
 pyenv init - | source
 
 # ------------------------------------------------------
@@ -117,16 +130,32 @@ function heic2png
   echo converted to $pngFileName
 end
 
+function svg2png
+  set pngFileName (rootname $argv).png
+  magick -density 100 $argv $pngFileName
+  echo converted to $pngFileName
+end
+
 function mov2gif
   set gifFileName (rootname $argv).gif
   ffmpeg -i $argv -r 10 $gifFileName
   echo converted to $gifFileName
 end
 
+function webm2mp4
+  set mp4FileName (rootname $argv).mp4
+  ffmpeg -i $argv $mp4FileName
+  echo converted to $mp4FileName
+end
+
 function svg2o
   set svgFileName (rootname $argv)_optimized.svg
   svgo $argv -o $svgFileName
   echo converted to $svgFileName
+end
+
+function dropboxconv
+  string replace www.dropbox dl.dropboxusercontent $argv | string replace '?dl=0' ''
 end
 
 # The next line updates PATH for the Google Cloud SDK.
