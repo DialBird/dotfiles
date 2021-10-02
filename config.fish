@@ -57,6 +57,8 @@ set -x PATH $HOME/.rbenv/bin $PATH
 set -x PATH /opt/homebrew/bin $PATH
 set -x PATH $HOME/.cargo/bin $PATH
 set -x PATH /opt/homebrew/opt/openssl@1.1/bin $PATH
+set -x PATH /Applications/CMake.app/Contents/bin $PATH
+set -x PATH $HOME/opt/anaconda3/condabin $PATH
 set -x LDFLAGS -L/opt/homebrew/opt/openssl@1.1/lib
 set -x CPPFLAGS -I/opt/homebrew/opt/openssl@1.1/include
 set -x PKG_CONFIG_PATH /opt/homebrew/opt/openssl@1.1/lib/pkgconfig
