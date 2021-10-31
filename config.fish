@@ -11,6 +11,7 @@ alias tcnf='vim ~/.tmux.conf'
 alias vim="nvim"
 alias vimrc='vim ~/.vimrc'
 alias vimrd='vim ~/.vimrc_dein'
+alias ws='webstorm'
 
 # Git
 alias ga='git add'
@@ -22,6 +23,7 @@ alias gchp='git cherry-pick'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gl='git log'
+alias glg='git log --graph'
 alias gp='git push'
 alias gr='git reset'
 alias gs='git status'
@@ -58,7 +60,8 @@ set -x PATH /opt/homebrew/bin $PATH
 set -x PATH $HOME/.cargo/bin $PATH
 set -x PATH /opt/homebrew/opt/openssl@1.1/bin $PATH
 set -x PATH /Applications/CMake.app/Contents/bin $PATH
-set -x PATH $HOME/opt/anaconda3/condabin $PATH
+set -x PATH /opt/anaconda3/condabin $PATH
+set -x PATH /opt/homebrew/opt/llvm/bin $PATH
 set -x LDFLAGS -L/opt/homebrew/opt/openssl@1.1/lib
 set -x CPPFLAGS -I/opt/homebrew/opt/openssl@1.1/include
 set -x PKG_CONFIG_PATH /opt/homebrew/opt/openssl@1.1/lib/pkgconfig
@@ -70,6 +73,13 @@ set -x RUBY_CONFIGURE_OPTS --with-openssl-dir=/opt/homebrew/opt/openssl@1.0
 # ------------------------------------------------------
 set -x PATH "/opt/homebrew/opt/openjdk/bin" $PATH
 set -gx CPPFLAGS "-I/opt/homebrew/opt/openjdk/include"
+
+# ------------------------------------------------------
+# NVM
+# ------------------------------------------------------
+set -x NVM_DIR "$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # ------------------------------------------------------
 # pyenv

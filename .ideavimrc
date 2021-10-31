@@ -1,0 +1,3 @@
+inoremap <silent> jj <ESC>
+set surround
+set commentary
