@@ -1,3 +1,15 @@
-inoremap <silent> jj <ESC>
-set surround
 set commentary
+set easymotion
+set surround
+set noerrorbells
+set belloff=all
+
+let mapleader = "\<Space>"
+inoremap <silent> jj <ESC>
+inoremap <C-a> <Home>
+
+"------------------------------------------------------
+" EasyMotion
+"------------------------------------------------------
+nmap <Leader><CR> <Plug>(easymotion-prefix)
+vmap <Leader><CR> <Plug>(easymotion-prefix)

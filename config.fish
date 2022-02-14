@@ -58,6 +58,7 @@ set -x PATH $GOPATH/bin $PATH
 set -x PATH $HOME/.rbenv/bin $PATH
 set -x PATH /opt/homebrew/bin $PATH
 set -x PATH $HOME/.cargo/bin $PATH
+set -x PATH $HOME/.pub-cache/bin $PATH
 set -x PATH /opt/homebrew/opt/openssl@1.1/bin $PATH
 set -x PATH /Applications/CMake.app/Contents/bin $PATH
 set -x PATH /opt/anaconda3/condabin $PATH
@@ -98,6 +99,12 @@ status --is-interactive; and source (rbenv init -|psub)
 # imagemagick
 # ------------------------------------------------------
 set -g fish_user_paths "/opt/homebrew/opt/gnu-getopt/bin" $fish_user_paths
+
+# ------------------------------------------------------
+# GCP
+# ------------------------------------------------------
+# STUDIOで開発するために必要
+export GOOGLE_APPLICATION_CREDENTIALS="$HOME/GCP/studio_staging_credential"
 
 # ------------------------------------------------------
 # function
