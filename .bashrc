@@ -80,3 +80,5 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 # rbenv
 export PATH=$PATH:$HOME/.rbenv/bin
 eval "$(rbenv init -)"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

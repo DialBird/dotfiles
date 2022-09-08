@@ -104,6 +104,12 @@ alias doce='docker-compose exec'
 alias docr='docker-compose run'
 
 # ------------------------------------------------------
+# Node
+# ------------------------------------------------------
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+# ------------------------------------------------------
 # PHP
 # ------------------------------------------------------
 alias cdmamp='cd /Applications/MAMP/htdocs'
