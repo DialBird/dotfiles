@@ -11,6 +11,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+PROMPT="%c/ %# "
+
 # unalias gcc
 bindkey -e
 bindkey '^[[A' up-line-or-search
@@ -52,6 +54,7 @@ alias l='ls'
 alias la='ls -a'
 alias ll='ls -l'
 alias his='history'
+alias ws='webstorm'
 
 # ------------------------------------------------------
 # config
@@ -178,6 +181,56 @@ function cpp_run() {
 alias -s cpp=cpp_run
 alias -s py=python
 alias -s rb=ruby
+
+# function bind_bang
+#     switch (commandline -t)[-1]
+#         case "!"
+#             commandline -t $history[1]; commandline -f repaint
+#         case "*"
+#             commandline -i !
+#     end
+# end
+
+# ------------------------------------------------------
+# Functions
+# ------------------------------------------------------
+function rootname() {
+  echo $argv | sed 's/\.[^.]*$//'
+}
+
+function webp2png() {
+  set pngFileName (rootname $argv).png
+  dwebp -o $pngFileName $argv
+  echo converted to $pngFileName
+}
+
+function svg2png() {
+  set pngFileName (rootname $argv).png
+  magick -density 100 $argv $pngFileName
+  echo converted to $pngFileName
+}
+
+function mov2gif() {
+  set gifFileName (rootname $argv).gif
+  ffmpeg -i $argv -r 10 $gifFileName
+  echo converted to $gifFileName
+}
+
+function webm2mp4() {
+  set mp4FileName (rootname $argv).mp4
+  ffmpeg -i $argv $mp4FileName
+  echo converted to $mp4FileName
+}
+
+function svg2o() {
+  set svgFileName (rootname $argv)_optimized.svg
+  svgo $argv -o $svgFileName
+  echo converted to $svgFileName
+}
+
+function dropboxconv() {
+  string replace www.dropbox dl.dropboxusercontent $argv | string replace '?dl=0' ''
+}
 
 # ------------------------------------------------------
 # etc
