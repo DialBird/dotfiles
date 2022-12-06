@@ -21,6 +21,7 @@ bindkey '^[[B' down-line-or-search
 # ------------------------------------------------------
 # zshrc
 # ------------------------------------------------------
+fpath+=/opt/homebrew/share/zsh/site-functions
 autoload -U promptinit; promptinit
 zstyle :prompt:pure:execution_time color 196
 zstyle :prompt:pure:git:branch color 202
