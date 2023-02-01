@@ -1,4 +1,4 @@
-# keisuke dotfiles
+# keisuke dotfile
 #
 # Executes commands at the start of an interactive session.
 #
@@ -112,6 +112,7 @@ alias docr='docker-compose run'
 # ------------------------------------------------------
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH="$HOME/google-cloud-sdk/bin:$PATH"
 
 # ------------------------------------------------------
 # PHP
@@ -125,6 +126,7 @@ export PATH=/Applications/MAMP/bin/php/php$PHP_VERSION/bin:$PATH
 # ------------------------------------------------------
 # Python
 # ------------------------------------------------------
+export PYENV_ROOT="$HOME/.pyenv"
 if command -v pyenv 1>/dev/null 2>&1; then
   export PATH=$PATH:$HOME/.pyenv/bin
 
@@ -134,7 +136,7 @@ fi
 # ------------------------------------------------------
 # Ruby
 # ------------------------------------------------------
-if command -v pyenv 1>/dev/null 2>&1; then
+if command -v rbenv 1>/dev/null 2>&1; then
   alias be='bundle exec'
 
   export PATH=$PATH:$HOME/.rbenv/bin
@@ -143,10 +145,18 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # ------------------------------------------------------
+# Go
+# ------------------------------------------------------
+export GOPATH=$HOME/go
+export PATH=$PATH:GOPATH
+
+# ------------------------------------------------------
 # gcloud
 # ------------------------------------------------------
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/dialbird/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/dialbird/google-cloud-sdk/path.zsh.inc'; fi
+# ------------------------------------------------------
+# Rust
+# ------------------------------------------------------
+#
 
 # ------------------------------------------------------
 # Suffix Aliases
@@ -240,8 +250,17 @@ alias ctags="`brew --prefix`/bin/ctags"
 
 export TERM=screen-256color
 export LANG=ja_JP.UTF-8
+export LDFLAGS="-L/opt/homebrew/lib"
+export CPPFLAGS="-I/opt/homebrew/include"
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # vim -> nvim
 alias vim="nvim"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f 'Users/coolooky/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/coolooky/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/coolooky/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/coolooky/google-cloud-sdk/completion.zsh.inc'; fi
