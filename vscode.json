@@ -1,0 +1,172 @@
+{
+  "vim.leader": "<space>",
+  "vim.easymotion": true,
+  "vim.hlsearch": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-d>": true,
+    "<C-e>": false,
+    "<C-f>": false
+  },
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "<CR>"],
+      "after": ["<leader>", "<leader>"]
+    },
+    {
+      "before": ["<leader>", "w"],
+      "after": [],
+      "commands": [
+        {
+          "command": ":w"
+        }
+      ]
+    },
+    {
+      "before": [ "u" ],
+      "commands": [ "undo" ]
+    },
+    {
+      "before": [ "ctrl+r" ],
+      "commands": [ "redo" ]
+    },
+  ],
+  "editor.rulers": [120],
+  "editor.scrollBeyondLastLine": false,
+  "files.insertFinalNewline": true,
+  "workbench.editor.enablePreview": false,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "[html]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[vue]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[ts]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[solidity]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.welcomePage.hiddenCategories": ["Setup", "Beginner"],
+  "workbench.iconTheme": "material-icon-theme",
+  "gitlens.views.remotes.branches.layout": "list",
+  "workbench.colorTheme": "Solarized Dark",
+  "liveServer.settings.CustomBrowser": "chrome",
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll": false,
+  //   "source.fixAll.eslint": false,
+  //   "source.fixAll.stylelint": false
+  // },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "emmet.variables": {
+    "lang": "en"
+  },
+  "tabnine.experimentalAutoImports": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust",
+    "editor.tabSize": 2
+  },
+  "[ruby]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "search.useGlobalIgnoreFiles": true,
+  "workbench.editorAssociations": {
+    "*.wasm": "default",
+    "*.tgz": "default"
+  },
+  "ruby.rubocop.onSave": false,
+  "editor.maxTokenizationLineLength": 50000,
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "prettier.eslintIntegration": true,
+  "vite.autoStart": false,
+  "eslint.alwaysShowStatus": true,
+  "php.validate.executablePath": "",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSaveMode": "modifications",
+  "volar.codeLens.references": false,
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "vue"
+  },
+  "css.validate": false,
+  "chatgpt.method": "GPT3 OpenAI API Key",
+  "chatgpt.gpt3.apiKey": "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",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "remote.SSH.remotePlatform": {
+    "sandbox.0vg29w.csb": "linux"
+  },
+  "editor.inlineSuggest.enabled": true,
+  "git.autofetch": true,
+  "githubPullRequests.pullBranch": "never",
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.fontSize": "12",
+  "errorLens.gutterIconSet": "defaultOutline",
+  "errorLens.statusBarMessageEnabled": true,
+  "errorLens.statusBarColorsEnabled": true,
+  "errorLens.messageMaxChars": 50,
+  "errorLens.fontStyleItalic": true,
+  "errorLens.messageBackgroundMode": "none",
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": true
+  },
+  "window.zoomLevel": -1,
+  "prettier.documentSelectors": [
+    "**/*.astro"
+  ],
+  "errorLens.excludeBySource": [
+    "ts(18048)"
+  ],
+  "svelte.enable-ts-plugin": true
+}
