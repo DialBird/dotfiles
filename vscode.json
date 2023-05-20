@@ -1,10 +1,13 @@
 {
+  "workbench.colorTheme": "Solarized Dark",
   "vim.leader": "<space>",
   "vim.easymotion": true,
   "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.surround": true,
+  "vim.useCtrlKeys": true,
   "vim.handleKeys": {
     "<C-a>": false,
-    "<C-d>": true,
     "<C-e>": false,
     "<C-f>": false
   },
@@ -27,15 +30,7 @@
           "command": ":w"
         }
       ]
-    },
-    {
-      "before": [ "u" ],
-      "commands": [ "undo" ]
-    },
-    {
-      "before": [ "ctrl+r" ],
-      "commands": [ "redo" ]
-    },
+    }
   ],
   "editor.rulers": [120],
   "editor.scrollBeyondLastLine": false,
@@ -47,7 +42,8 @@
   },
   "[html]": {
     "editor.tabSize": 2,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[vue]": {
     "editor.tabSize": 2,
@@ -69,40 +65,26 @@
     "editor.insertSpaces": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.welcomePage.hiddenCategories": ["Setup", "Beginner"],
-  "workbench.iconTheme": "material-icon-theme",
-  "gitlens.views.remotes.branches.layout": "list",
-  "workbench.colorTheme": "Solarized Dark",
-  "liveServer.settings.CustomBrowser": "chrome",
-  // "editor.codeActionsOnSave": {
-  //   "source.fixAll": false,
-  //   "source.fixAll.eslint": false,
-  //   "source.fixAll.stylelint": false
-  // },
-  "liveServer.settings.donotShowInfoMsg": true,
-  "emmet.variables": {
-    "lang": "en"
-  },
-  "tabnine.experimentalAutoImports": true,
-  "security.workspace.trust.untrustedFiles": "open",
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
-  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.insertSpaces": true,
     "editor.tabSize": 2
   },
   "[svelte]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
   },
-  "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.insertSpaces": true,
     "editor.tabSize": 2
   },
   "[ruby]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust",
     "editor.tabSize": 2
   },
   "[c]": {
@@ -111,10 +93,25 @@
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
+  "[python]": {
+    "editor.formatOnType": true
   },
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "vue"
+  },
+  "workbench.editor.untitled.hint": "hidden",
+  "editor.formatOnSave": true,
+  // save時にeslint（prettire含む）でフォーマットする
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  // .（ドット）とかを打つだけで、Enterを押した時と同様に、違うサジェスチョンがOKされてしまうのを防ぐ
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
   "search.useGlobalIgnoreFiles": true,
   "workbench.editorAssociations": {
     "*.wasm": "default",
@@ -125,22 +122,13 @@
   "rust-analyzer.checkOnSave.command": "clippy",
   "prettier.eslintIntegration": true,
   "vite.autoStart": false,
-  "eslint.alwaysShowStatus": true,
   "php.validate.executablePath": "",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSaveMode": "modifications",
   "volar.codeLens.references": false,
-  "tailwindCSS.emmetCompletions": true,
-  "tailwindCSS.includeLanguages": {
-    "plaintext": "vue"
-  },
   "css.validate": false,
   "chatgpt.method": "GPT3 OpenAI API Key",
   "chatgpt.gpt3.apiKey": "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",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "[python]": {
-    "editor.formatOnType": true
-  },
   "remote.SSH.remotePlatform": {
     "sandbox.0vg29w.csb": "linux"
   },
@@ -162,11 +150,16 @@
     "markdown": true
   },
   "window.zoomLevel": -1,
-  "prettier.documentSelectors": [
-    "**/*.astro"
-  ],
-  "errorLens.excludeBySource": [
-    "ts(18048)"
-  ],
-  "svelte.enable-ts-plugin": true
+  "prettier.documentSelectors": ["**/*.astro"],
+  "errorLens.excludeBySource": ["ts(18048)"],
+  "svelte.enable-ts-plugin": true,
+  "workbench.welcomePage.hiddenCategories": ["Setup", "Beginner"],
+  "gitlens.views.remotes.branches.layout": "list",
+  "liveServer.settings.CustomBrowser": "chrome",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "emmet.variables": {
+    "lang": "en"
+  },
+  "tabnine.experimentalAutoImports": true,
+  "security.workspace.trust.untrustedFiles": "open"
 }
