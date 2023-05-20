@@ -2,7 +2,6 @@
 "
 " if you use dein
 au!
-source ~/.vimrc_dein
 let g:dein#auto_recache = 1
 
 "------------------------------------------------------
@@ -56,7 +55,7 @@ let g:solarized_termtrans=1
 let g:solarized_underline=0
 let g:solarized_visibility='high'
 " call togglebg#map("<F5>")
-colorscheme solarized
+" colorscheme solarized
 set textwidth=80
 set colorcolumn=+1
 set formatoptions-=t

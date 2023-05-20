@@ -4,7 +4,6 @@
 # config
 # ------------------------------------------------------
 alias vimrc='vim ~/.vimrc'
-alias vimrd='vim ~/.vimrc_dein'
 alias bashrc='vim ~/.bashrc'
 alias bashp='vim ~/.bash_profile'
 alias sbash='source ~/.bashrc'

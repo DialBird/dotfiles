@@ -65,7 +65,6 @@ alias bashrc='vim ~/.bashrc'
 alias szsh='source ~/.zshrc'
 alias tcnf='vim ~/.tmux.conf'
 alias vimrc='vim ~/.vimrc'
-alias vimrd='vim ~/.vimrc_dein'
 alias zprec='vim ~/.zpreztorc'
 alias zshrc='vim ~/.zshrc'
 
@@ -114,11 +113,6 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"
 
-# pnpm
-export PNPM_HOME="/Users/coolooky/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-
 # ------------------------------------------------------
 # PHP
 # ------------------------------------------------------
@@ -138,6 +132,11 @@ if command -v pyenv 1>/dev/null 2>&1; then
 
   eval "$(pyenv init -)"
 fi
+
+# pnpm
+export PNPM_HOME="/Users/coolooky/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
 
 # ------------------------------------------------------
 # Ruby
