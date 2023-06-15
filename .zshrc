@@ -238,6 +238,13 @@ function webm2mp4() {
   echo converted to $mp4FileName
 }
 
+function mp423() {
+  local bitrate=${2:-128k}
+  local mp3FileName="${1%.*}.mp3"
+  ffmpeg -i $argv -b:a $bitrate $mp3FileName
+  echo converted to $mp3FileName at $bitrate
+}
+
 function svg2o() {
   set svgFileName (rootname $argv)_optimized.svg
   svgo $argv -o $svgFileName
@@ -247,11 +254,6 @@ function svg2o() {
 function dropboxconv() {
   string replace www.dropbox dl.dropboxusercontent $argv | string replace '?dl=0' ''
 }
-
-# ------------------------------------------------------
-# OpenAI
-# ------------------------------------------------------
-export OPENAI_API_KEY=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
 
 # ------------------------------------------------------
 # etc
