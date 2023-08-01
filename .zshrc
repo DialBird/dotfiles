@@ -125,6 +125,7 @@ export PATH=/Applications/MAMP/bin/php/php$PHP_VERSION/bin:$PATH
 # ------------------------------------------------------
 # Python
 # ------------------------------------------------------
+export PYENV_VERSION="system"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="/Users/coolooky/.local/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -239,9 +240,9 @@ function webm2mp4() {
 }
 
 function mp423() {
-  local bitrate=${2:-128k}
   local mp3FileName="${1%.*}.mp3"
-  ffmpeg -i $argv -b:a $bitrate $mp3FileName
+  local bitrate=${2:-128k}
+  ffmpeg -i $1 -b:a $bitrate $mp3FileName
   echo converted to $mp3FileName at $bitrate
 }
 
@@ -268,29 +269,35 @@ export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig"
 
+export JAVA_HOME="/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents"
+export PATH="$JAVA_HOME/bin:$PATH"
+
+export PATH="/opt/homebrew/opt/libomp/bin:$PATH"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # vim -> nvim
 alias vim="nvim"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f 'Users/coolooky/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/coolooky/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/coolooky/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/coolooky/google-cloud-sdk/completion.zsh.inc'; fi
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/coolooky/.pyenv/versions/miniconda3-latest/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/taniguchitakashiryou/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/coolooky/.pyenv/versions/miniconda3-latest/etc/profile.d/conda.sh" ]; then
-        . "/Users/coolooky/.pyenv/versions/miniconda3-latest/etc/profile.d/conda.sh"
+    if [ -f "/Users/taniguchitakashiryou/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/taniguchitakashiryou/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/coolooky/.pyenv/versions/miniconda3-latest/bin:$PATH"
+        export PATH="/Users/taniguchitakashiryou/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/taniguchitakashiryou/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/taniguchitakashiryou/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/taniguchitakashiryou/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/taniguchitakashiryou/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
