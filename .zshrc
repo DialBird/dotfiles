@@ -111,7 +111,6 @@ alias docr='docker-compose run'
 # ------------------------------------------------------
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-export PATH="$HOME/google-cloud-sdk/bin:$PATH"
 
 # ------------------------------------------------------
 # PHP
@@ -163,6 +162,25 @@ export PATH=$PATH:GOPATH
 # Rust
 # ------------------------------------------------------
 #
+# ------------------------------------------------------
+# Java
+# ------------------------------------------------------
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+# Javaのbrewインストール時に一緒に貼れと言われたが、CPPFLAGSは先に定義されてあったので、保留
+# For compilers to find openjdk you may need to set:
+# export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+
+# ------------------------------------------------------
+# GCP
+# ------------------------------------------------------
+export PATH="$HOME/google-cloud-sdk/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
 # ------------------------------------------------------
 # Suffix Aliases
@@ -295,9 +313,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/taniguchitakashiryou/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/taniguchitakashiryou/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/taniguchitakashiryou/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/taniguchitakashiryou/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
