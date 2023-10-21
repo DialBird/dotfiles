@@ -126,17 +126,11 @@ export PATH=/Applications/MAMP/bin/php/php$PHP_VERSION/bin:$PATH
 # ------------------------------------------------------
 export PYENV_VERSION="system"
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="/Users/coolooky/.local/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
   export PATH=$PATH:$HOME/.pyenv/bin
 
   eval "$(pyenv init -)"
 fi
-
-# pnpm
-export PNPM_HOME="/Users/coolooky/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
 
 # ------------------------------------------------------
 # Ruby
@@ -156,6 +150,12 @@ export GOPATH=$HOME/go
 export PATH=$PATH:GOPATH
 
 # ------------------------------------------------------
+# Mojo
+# ------------------------------------------------------
+export MODULAR_HOME="$HOME/.modular"
+export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
+
+# ------------------------------------------------------
 # gcloud
 # ------------------------------------------------------
 # ------------------------------------------------------
@@ -170,6 +170,11 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # Javaのbrewインストール時に一緒に貼れと言われたが、CPPFLAGSは先に定義されてあったので、保留
 # For compilers to find openjdk you may need to set:
 # export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+
+# ------------------------------------------------------
+# PostgreSQL
+# ------------------------------------------------------
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
 # ------------------------------------------------------
 # GCP
@@ -313,3 +318,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# Shopify Hydrogen alias to local projects
+alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
