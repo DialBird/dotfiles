@@ -109,7 +109,6 @@ alias docr='docker-compose run'
 # ------------------------------------------------------
 # Node
 # ------------------------------------------------------
-export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 # ------------------------------------------------------
@@ -244,6 +243,12 @@ function webp2png() {
   echo converted to $pngFileName
 }
 
+function jpg2webp() {
+  set webpFileName (rootname $argv).webp
+  ffmpeg -i $argv $webpFileName
+  echo converted to $webpFileName
+}
+
 function svg2png() {
   set pngFileName (rootname $argv).png
   magick -density 100 $argv $pngFileName
@@ -321,3 +326,4 @@ unset __conda_setup
 
 # Shopify Hydrogen alias to local projects
 alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
+eval "$(gh copilot alias -- zsh)"
