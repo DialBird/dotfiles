@@ -109,7 +109,8 @@ alias docr='docker-compose run'
 # ------------------------------------------------------
 # Node
 # ------------------------------------------------------
-export PATH="$VOLTA_HOME/bin:$PATH"
+export PROTO_HOME="$HOME/.proto"
+export PATH="$PROTO_HOME:$PROTO_HOME/shims:$PATH"
 
 # ------------------------------------------------------
 # PHP
@@ -141,6 +142,8 @@ if command -v rbenv 1>/dev/null 2>&1; then
 
   eval "$(rbenv init -)"
 fi
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH"
 
 # ------------------------------------------------------
 # Go
@@ -327,3 +330,11 @@ unset __conda_setup
 # Shopify Hydrogen alias to local projects
 alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
 eval "$(gh copilot alias -- zsh)"
+
+# pnpm
+export PNPM_HOME="/Users/taniguchitakashiryou/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
