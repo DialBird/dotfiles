@@ -190,6 +190,12 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
 # ------------------------------------------------------
+# Proto
+# ------------------------------------------------------
+export PROTO_AUTO_INSTALL=true
+export PROTO_AUTO_CLEAN=true
+
+# ------------------------------------------------------
 # Suffix Aliases
 # ------------------------------------------------------
 function with_echo() {
