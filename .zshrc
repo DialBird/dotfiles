@@ -124,13 +124,12 @@ export PATH=/Applications/MAMP/bin/php/php$PHP_VERSION/bin:$PATH
 # ------------------------------------------------------
 # Python
 # ------------------------------------------------------
-export PYENV_VERSION="system"
 export PYENV_ROOT="$HOME/.pyenv"
-if command -v pyenv 1>/dev/null 2>&1; then
-  export PATH=$PATH:$HOME/.pyenv/bin
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
 
-  eval "$(pyenv init -)"
-fi
+fpath+=~/dotfiles/.zfunc
+autoload -Uz compinit && compinit
 
 # ------------------------------------------------------
 # Ruby
