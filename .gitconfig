@@ -3,6 +3,7 @@
   pager = less
   quotepath = false
   ui = true
+	excludesfile = /Users/taniguchitakashiryou/.gitignore_global
 [credential]
   helper = store
 [init]

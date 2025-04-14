@@ -14,3 +14,7 @@ $ npm install --global pure-prompt
 $ brew install ag fzf
 $ $(brew --prefix)/opt/fzf/install
 ```
+
+# ツール
+- jarファイルなどは、`~/tools`ディレクトリに配置してエイリアス
+- epubcheckをダウンロードして、

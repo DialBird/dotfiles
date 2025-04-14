@@ -157,6 +157,11 @@ export MODULAR_HOME="$HOME/.modular"
 export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
 
 # ------------------------------------------------------
+# Flutter
+# ------------------------------------------------------
+export PATH=$HOME/development/flutter/bin:$PATH
+
+# ------------------------------------------------------
 # gcloud
 # ------------------------------------------------------
 # ------------------------------------------------------
@@ -171,6 +176,7 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # Javaのbrewインストール時に一緒に貼れと言われたが、CPPFLAGSは先に定義されてあったので、保留
 # For compilers to find openjdk you may need to set:
 # export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+alias epubcheck="java -jar ~/tools/epubcheck-5.2.1/epubcheck.jar"
 
 # ------------------------------------------------------
 # PostgreSQL
