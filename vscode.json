@@ -35,27 +35,66 @@
   "editor.rulers": [120],
   "editor.scrollBeyondLastLine": false,
   "files.insertFinalNewline": true,
-  "workbench.editor.enablePreview": false,
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
-    "typescript": "typescriptreact"
+    "typescript": "typescriptreact",
+    "jinja-html": "html"
   },
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue"
+  ],
+  "workbench.editorAssociations": {
+    "*.wasm": "default",
+    "*.tgz": "default"
+  },
+  "editor.maxTokenizationLineLength": 50000,
+  "php.validate.executablePath": "",
+  "editor.formatOnSaveMode": "modifications",
+  "css.validate": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.inlineSuggest.enabled": true,
+  "git.autofetch": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false,
+    "yaml": true
+  },
+  "prettier.documentSelectors": ["**/*.astro"],
+  "gitlens.views.remotes.branches.layout": "list",
+  "emmet.variables": {
+    "lang": "en"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.fontSize": "12",
+  "errorLens.gutterIconSet": "defaultOutline",
+  "errorLens.statusBarMessageEnabled": true,
+  "errorLens.statusBarColorsEnabled": true,
+  "errorLens.messageMaxChars": 50,
+  "errorLens.fontStyleItalic": true,
+  "errorLens.messageBackgroundMode": "none",
   "[html]": {
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[yaml]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
   "[vue]": {
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[ts]": {
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -66,9 +105,19 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.insertSpaces": true,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[svelte]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -79,12 +128,17 @@
     "editor.insertSpaces": true,
     "editor.tabSize": 2
   },
+  "[jsonl]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
   "[ruby]": {
     "editor.tabSize": 2,
     "editor.insertSpaces": true
   },
   "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust",
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
     "editor.tabSize": 2
   },
   "[c]": {
@@ -94,72 +148,116 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[python]": {
-    "editor.formatOnType": true
+    "editor.defaultFormatter": "charliermarsh.ruff"
   },
-  "workbench.iconTheme": "material-icon-theme",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "tailwindCSS.emmetCompletions": true,
-  "tailwindCSS.includeLanguages": {
-    "plaintext": "vue"
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
   },
-  "workbench.editor.untitled.hint": "hidden",
-  "editor.formatOnSave": true,
-  // save時にeslint（prettire含む）でフォーマットする
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.formatAll.terraform": "explicit"
+    }
   },
-  // .（ドット）とかを打つだけで、Enterを押した時と同様に、違うサジェスチョンがOKされてしまうのを防ぐ
-  "editor.acceptSuggestionOnCommitCharacter": false,
-  "eslint.alwaysShowStatus": true,
-  "eslint.format.enable": true,
-  "search.useGlobalIgnoreFiles": true,
-  "workbench.editorAssociations": {
-    "*.wasm": "default",
-    "*.tgz": "default"
+  "[swift]": {
+    "editor.defaultFormatter": "vknabel.vscode-apple-swift-format",
+    "editor.formatOnSave": false
   },
-  "ruby.rubocop.onSave": false,
-  "editor.maxTokenizationLineLength": 50000,
-  "rust-analyzer.checkOnSave.command": "clippy",
-  "prettier.eslintIntegration": true,
-  "vite.autoStart": false,
-  "php.validate.executablePath": "",
-  "editor.formatOnSaveMode": "modifications",
-  "volar.codeLens.references": false,
-  "css.validate": false,
-  "chatgpt.method": "GPT3 OpenAI API Key",
-  "chatgpt.gpt3.apiKey": "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",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "remote.SSH.remotePlatform": {
-    "sandbox.0vg29w.csb": "linux"
+  "[sql]": {
+    "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
   },
-  "editor.inlineSuggest.enabled": true,
-  "git.autofetch": true,
-  "githubPullRequests.pullBranch": "never",
-  "errorLens.gutterIconsEnabled": true,
-  "errorLens.fontSize": "12",
-  "errorLens.gutterIconSet": "defaultOutline",
-  "errorLens.statusBarMessageEnabled": true,
-  "errorLens.statusBarColorsEnabled": true,
-  "errorLens.messageMaxChars": 50,
-  "errorLens.fontStyleItalic": true,
-  "errorLens.messageBackgroundMode": "none",
-  "github.copilot.enable": {
-    "*": true,
-    "yaml": false,
-    "plaintext": false,
-    "markdown": true
+  "[jinja-html]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.formatOnSave": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
   },
+  "[liquid]": {
+    "editor.defaultFormatter": "Shopify.theme-check-vscode"
+  },
+  "Prettier-SQL.tabSizeOverride": 2,
   "window.zoomLevel": -1,
-  "prettier.documentSelectors": ["**/*.astro"],
-  "errorLens.excludeBySource": ["ts(18048)"],
-  "svelte.enable-ts-plugin": true,
-  "workbench.welcomePage.hiddenCategories": ["Setup", "Beginner"],
-  "gitlens.views.remotes.branches.layout": "list",
-  "liveServer.settings.CustomBrowser": "chrome",
-  "liveServer.settings.donotShowInfoMsg": true,
-  "emmet.variables": {
-    "lang": "en"
+  "terminal.integrated.inheritEnv": false,
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "bash",
+      "args": ["-l"],
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh",
+      "args": ["-l"]
+    },
+    "fish": {
+      "path": "fish",
+      "args": ["-l"]
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    }
   },
-  "tabnine.experimentalAutoImports": true,
-  "security.workspace.trust.untrustedFiles": "open"
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
+  "search.useGlobalIgnoreFiles": true,
+  "workbench.editor.empty.hint": "hidden",
+  "redhat.telemetry.enabled": true,
+  "cursor.cpp.disabledLanguages": ["scminput"],
+  "jest.runMode": {
+    "type": "on-demand"
+  },
+  "makefile.configureOnOpen": true,
+  "prisma.showPrismaDataPlatformNotification": false,
+  "markdown.marp.themes": ["./base.css"],
+  "markdown.marp.html": "default",
+  "powermode.enabled": false,
+  "powermode.presets": "simple-rift",
+  "roo-cline.allowedCommands": [
+    "npm test",
+    "npm install",
+    "tsc",
+    "git log",
+    "git diff",
+    "git show",
+    "pnpm test",
+    "pnpm add",
+    "npm run build",
+    "git add",
+    "git commit"
+  ],
+  "lldb.library": "/Library/Developer/CommandLineTools/Library/PrivateFrameworks/LLDB.framework/Versions/A/LLDB",
+  "lldb.launch.expressions": "native",
+  "files.associations": {
+    "*.html": "jinja-html",
+    "*.jinja": "jinja-html",
+    "*.jinja2": "jinja-html"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "gitlens.views.scm.grouped.views": {
+    "commits": true,
+    "branches": true,
+    "remotes": true,
+    "stashes": true,
+    "tags": true,
+    "worktrees": true,
+    "contributors": true,
+    "repositories": false,
+    "searchAndCompare": true,
+    "launchpad": false
+  },
+  "liveServer.settings.CustomBrowser": "chrome",
+  "calva.keybindingsEnabled": true
 }
