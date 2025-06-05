@@ -1,7 +1,7 @@
 .PHONY: install clean backup help
 
 # dotfilesのリスト
-DOTFILES := .bashrc .gitconfig .git_template .vimrc .tmux.conf .zshrc .zpreztorc .zprofile .ideavimrc
+DOTFILES := .bashrc .gitconfig .git_template .vimrc .tmux.conf .zshrc .zpreztorc .zprofile .ideavimrc .claude
 HOME_DIR := $(HOME)
 DOTFILES_DIR := $(HOME)/dotfiles
 BACKUP_SUFFIX := .backup.$(shell date +%Y%m%d_%H%M%S)

@@ -1,1 +1,6 @@
 .DS_Store
+
+.claude/ide/*
+.claude/projects/*
+.claude/statsig/*
+.claude/todos/*
