@@ -110,7 +110,7 @@ alias docr='docker-compose run'
 # Node
 # ------------------------------------------------------
 export PROTO_HOME="$HOME/.proto"
-export PATH="$PROTO_HOME:$PROTO_HOME/shims:$PATH"
+export PATH="$PROTO_HOME:$PROTO_HOME/shims:$PROTO_HOME/tools/node/20.12.1/bin:$PATH"
 
 # ------------------------------------------------------
 # PHP
