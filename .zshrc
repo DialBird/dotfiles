@@ -251,7 +251,9 @@ function itermhere() {
   open -a iTerm .
 }
 function ktmux() {
-  local session_name="${1:-layout}"  # 引数でセッション名を指定（省略時は "layout"）
+  local dir_name=$(basename "$PWD")
+  local timestamp=$(date "+%Y%m%d%H%M%S")
+  local session_name="${dir_name}-${timestamp}"
 
   tmux new-session -d -s "$session_name" \; \
     split-window -h \; \
