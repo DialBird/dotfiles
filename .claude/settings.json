@@ -2,15 +2,18 @@
   "permissions": {
     "allow": [
       "Bash(afplay:*)",
-      "Bash(mkdir:*)",
+      "Bash(find:*)",
+      "Bash(gh:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(pnpm run lint)",
-      "Bash(pnpm run test:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
       "Bash(pnpm add:*)",
       "Bash(pnpm dlx:*)",
+      "Bash(pnpm run *)",
+      "Bash(pnpm test:*)",
       "Read(~/.zshrc)",
-      "WebFetch(domain:docs.anthropic.com)"
+      "WebFetch(schema:https)"
     ],
     "deny": [
       "Bash(curl:*)"
