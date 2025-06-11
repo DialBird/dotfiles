@@ -280,23 +280,6 @@ function ktmux() {
 
   sleep 1 # Claude Code の起動完了を待つ
 
-  local main_msg=$(cat <<EOF
-あなたは、tmux上で3つのペイン（%1, %2, %3）を操作するエージェントです。
-ユーザーはこの「mainペイン」から、次のように命令します：
-
-例: 1: サーバを起動
-
-この場合、あなたは以下のような丁寧な言語に変換し、それをtmuxのペイン %1 に送信します。
-
-実行例:
-tmux send-keys -t %1 "サーバーを起動します。必要なコマンドを実行します。" C-m
-
-その後、必要な実コマンド（例: `npm run dev` など）がわかっていれば、それも続けて送ってください。
-また、命令が曖昧な場合は、その意図を確認してから送るようにしてください。
-EOF
-)
-  tmux send-keys -t "$main_pane" "$main_msg"
-
   # 全ペインに "あなたは paneX" 命令を送る
   local i=1
   for pane_id in "${task_panes[@]}"; do
