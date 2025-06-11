@@ -247,6 +247,54 @@ alias -s rb=ruby
 # ------------------------------------------------------
 # Functions
 # ------------------------------------------------------
+function itermhere() {
+  open -a iTerm .
+}
+function ktmux() {
+  local session_name="${1:-layout}"  # 引数でセッション名を指定（省略時は "layout"）
+
+  tmux new-session -d -s "$session_name" \; \
+    split-window -h \; \
+    resize-pane -t 0 -x 20 \; \
+    select-pane -t 1 \; \
+    split-window -v \; \
+    split-window -v \; \
+    select-pane -t 0
+
+  # 少し待ってからペインIDを取得
+  sleep 0.3
+
+  # ペイン一覧を取得（順番通り：main, pane1, pane2, pane3）
+  local panes=($(tmux list-panes -t "$session_name" -F '#{pane_id}'))
+  local main_pane="${panes[0]}"
+  local task_panes=("${panes[@]:1}")  # 残りの3つ
+
+  # 全ペインのIDを取得して "cc" を送る
+  for pane_id in "${panes[@]}"; do
+    tmux send-keys -t "$pane_id" "cc" Enter &
+    sleep 0.1  # タイミング調整（なくてもOK）
+  done
+  wait  # 並列処理の終了を待つ
+
+  sleep 1 # Claude Code の起動完了を待つ
+
+  # 全ペインに "あなたは paneX" 命令を送る
+  local i=1
+  for pane_id in "${task_panes[@]}"; do
+    local msg=$(cat <<EOF
+あなたは pane$i です。mainパネルからタスクを受け取って処理してください。
+エラー時は\"tmux send-keys -t %0\"で、[pane$i]のプレフィックスをつけて、mainパネルへ報告すること。
+わかったら確認で「わかりました」と返事をtmux send-keysを使って送って
+EOF
+)
+    tmux send-keys -t "$pane_id" "$msg"
+    ((i++))
+  done
+  wait
+
+  # セッションにアタッチ
+  tmux attach-session -t "$session_name"
+}
 function rootname() {
   echo $argv | sed 's/\.[^.]*$//'
 }
@@ -301,7 +349,9 @@ function dropboxconv() {
 # ------------------------------------------------------
 # etc
 # ------------------------------------------------------
+alias cc="claude --dangerously-skip-permissions"
 alias ctags="`brew --prefix`/bin/ctags"
+alias tmuxks="tmux kill-session"
 
 export TERM=screen-256color
 export LANG=ja_JP.UTF-8
