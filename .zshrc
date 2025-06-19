@@ -107,10 +107,12 @@ alias doce='docker-compose exec'
 alias docr='docker-compose run'
 
 # ------------------------------------------------------
-# Node
+# Node / Deno
 # ------------------------------------------------------
 export PROTO_HOME="$HOME/.proto"
 export PATH="$PROTO_HOME:$PROTO_HOME/shims:$PROTO_HOME/tools/node/20.12.1/bin:$PATH"
+export PATH="$PROTO_HOME:$PROTO_HOME/shims:$PROTO_HOME/tools/node/22.15.0/bin:$PATH"
+export PATH="$HOME/.deno/bin:$PATH"
 
 # ------------------------------------------------------
 # PHP
@@ -167,7 +169,6 @@ export PATH=$HOME/development/flutter/bin:$PATH
 # ------------------------------------------------------
 # Rust
 # ------------------------------------------------------
-#
 # ------------------------------------------------------
 # Java
 # ------------------------------------------------------
@@ -369,9 +370,11 @@ function dropboxconv() {
 # ------------------------------------------------------
 # etc
 # ------------------------------------------------------
-alias cc="claude --dangerously-skip-permissions"
+alias claude="claude --dangerously-skip-permissions"
+alias cc="claude"
 alias ctags="`brew --prefix`/bin/ctags"
 alias tmuxks="tmux kill-session"
+alias awscre="cat ~/.aws/credentials"
 
 export TERM=screen-256color
 export LANG=ja_JP.UTF-8
@@ -387,6 +390,9 @@ export PATH="$JAVA_HOME/bin:$PATH"
 export PATH="/opt/homebrew/opt/libomp/bin:$PATH"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
+# CCManager
+# https://github.com/kbwo/ccmanager/tree/main
+export CCMANAGER_CLAUDE_ARGS="--dangerously-skip-permissions"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
