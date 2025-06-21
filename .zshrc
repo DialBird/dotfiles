@@ -93,7 +93,6 @@ alias ghproj='open https://github.com/remotehour/remotehour/projects/2'
 # docker
 # ------------------------------------------------------
 alias dec='docker exec -it'
-alias dimgs='docker images'
 alias dp='docker ps --format "table {{.Names}}\t{{.Ports}}"'
 alias dpa='dp -a'
 alias dr='docker run --name'
@@ -105,6 +104,16 @@ alias doc='docker-compose'
 alias docb='docker-compose build'
 alias doce='docker-compose exec'
 alias docr='docker-compose run'
+
+function dimgtags() {
+  if [ -z "$1" ]; then
+    echo "使用法: dgrepimage <検索文字列>"
+    echo "例: dgrepimage d5a9fca065ea"
+    echo "例: dgrepimage latest"
+    return 1
+  fi
+  docker images --format "{{.ID}}\t{{.Repository}}:{{.Tag}}" | grep "$1"
+}
 
 # ------------------------------------------------------
 # Node / Deno
