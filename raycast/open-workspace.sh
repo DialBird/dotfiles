@@ -7,7 +7,7 @@
 
 # Optional parameters:
 # @raycast.icon 🤖
-# @raycast.argument1 { "type": "dropdown", "placeholder": "Select workspace", "data": [{"title": "Zizai Lab Tasks", "value": "zizai-lab"}, {"title": "Obsidian Knowledge", "value": "obsidian"}, {"title": "Zenn", "value": "zenn"}, {"title": "dotfiles", "value": "dotfiles"}] }
+# @raycast.argument1 { "type": "dropdown", "placeholder": "Select workspace", "data": [{"title": "Zizai Lab Tasks", "value": "zizai-lab"}, {"title": "Obsidian Knowledge", "value": "obsidian"}, {"title": "Zenn", "value": "zenn"}, {"title": "dotfiles", "value": "dotfiles"}, {"title": "Vote2", "value": "vote2"}] }
 
 # Documentation:
 # @raycast.author dialbird
@@ -27,6 +27,9 @@ case "$workspace" in
     ;;
 "dotfiles")
     cursor "/Users/taniguchitakashiryou/dotfiles"
+    ;;
+"vote2")
+    cursor "/Users/taniguchitakashiryou/works/4NEXT/Vote2"
     ;;
 *)
     echo "Error: Invalid workspace selection"
