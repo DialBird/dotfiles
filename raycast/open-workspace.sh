@@ -17,16 +17,16 @@ workspace="$1"
 
 case "$workspace" in
 "zizai-lab")
-    code "/Users/taniguchitakashiryou/works/zizai-lab/zizai-lab-tasks"
+    cursor "/Users/taniguchitakashiryou/works/zizai-lab/zizai-lab-tasks"
     ;;
 "obsidian")
-    code "/Users/taniguchitakashiryou/Library/Mobile Documents/iCloud~md~obsidian/Documents/obsidian_knowledge/"
+    cursor "/Users/taniguchitakashiryou/Library/Mobile Documents/iCloud~md~obsidian/Documents/obsidian_knowledge/"
     ;;
 "zenn")
-    code "/Users/taniguchitakashiryou/works/zizai-lab/zenn"
+    cursor "/Users/taniguchitakashiryou/works/zizai-lab/zenn"
     ;;
 "dotfiles")
-    code "/Users/taniguchitakashiryou/dotfiles"
+    cursor "/Users/taniguchitakashiryou/dotfiles"
     ;;
 *)
     echo "Error: Invalid workspace selection"
