@@ -379,7 +379,7 @@ function dropboxconv() {
 # ------------------------------------------------------
 # etc
 # ------------------------------------------------------
-alias claude="claude --dangerously-skip-permissions"
+alias claude="$(which claude) --dangerously-skip-permissions"
 alias cc="claude"
 alias ccc="claude --continue"
 alias ctags="`brew --prefix`/bin/ctags"
