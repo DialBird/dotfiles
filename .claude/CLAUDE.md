@@ -43,6 +43,7 @@
 
 ### 3.3 Test Driven Development (TDD)
 
+- Basically, follow the "t-wada method".
 - Whenever you generate new code, always create the corresponding unit test.
 - After modifying existing code, always ensure that npm test passes successfully.
 - Iterate in small increments
