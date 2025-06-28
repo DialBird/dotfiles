@@ -12,12 +12,21 @@
 - The worktree directory name should be based on the branch name, with all slashes (/) replaced by hyphens (-).
 - Make sure .worktrees/ is excluded from version control by adding it to .gitignore.
 
-## 2. Audible Notifications
+## 2. Voice Notification Rules
 
-| Context                                                   | Command                            |
-| --------------------------------------------------------- | ---------------------------------- |
-| When user input is required <br>_(SND.dev “piano” sound)_ | `afplay ~/.claude/caution.wav`     |
-| On successful completion                                  | `afplay ~/.claude/celebration.wav` |
+- Always use VOICEVOX voice notification feature when all tasks are completed
+- Perform voice notifications for important announcements and error occurrences
+- Voice notification settings: use speaker=8, speedScale=1.0
+- Convert English words to appropriate katakana before sending to VOICEVOX
+- Remove unnecessary spaces from text sent to VOICEVOX
+- Keep each voice notification with Japanese under 100 characters and speak simply
+- Perform detailed voice notifications at the following timings:
+  - When receiving orders: "了解です" "承知しました"
+  - When starting work: "〜を開始します"
+  - During work: "調査中です" "修正中です"
+  - Progress reports: "半分完了です" "もう少しです"
+  - When completed: "完了です" "修正完了です"
+- **Do not include detailed technical explanations in voice notifications, only report results concisely**
 
 ## 3. Core Principles
 
