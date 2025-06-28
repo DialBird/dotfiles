@@ -23,31 +23,19 @@
 
 ### 3.1 Functional approach (FP)
 
-- Prefer pure functions.
-- Use invariant (immutable) data structures
-- Represent success and failure explicitly with `Result<T, E>`
+- Follow Scott Wlaschin's functional programming approach
 
 ### 3.2 Domain Driven Design (DDD)
 
-- Distinguish between **Domain Services** from **Application Services**.
-- Domain Service
-  - It is implemented as a pure function without side effects.
-  - Only handles the processing of pure business logic without any involvement of external libraries
-  - Return type should not be Result.
-  - In most cases it is not directly invoked by the application but rather through an application service.
-- Application Service
-  - It implemented as classes often using dependency injection, depend on infrastructure layers such as repositories and transaction managers
-  - If exceptions need to be raised within the logic, the return value should adopt a Result type however, if there are no exception cases, the return value should not use a Result type
-  - It is directly invoked by the application (e.g., UI or API).
-  - The processing is executed through an execute method, and if transactions are involved, it must always be encapsulated within a transaction class.
+- Follow Eric Evans' original DDD principles and Vaughn Vernon's implementation patterns.
+- Apply 増田亨のドメインモデリング手法 for Japanese development context.
+- Distinguish between Domain Services (pure business logic) and Application Services (use case coordination).
 
 ### 3.3 Test Driven Development (TDD)
 
-- Basically, follow the "t-wada method".
 - Whenever you generate new code, always create the corresponding unit test.
+- Basically, follow the t-wada method.
 - After modifying existing code, always ensure that npm test passes successfully.
-- Iterate in small increments
-- Continuous refactoring
 
 ### 3.4 Self‑Describing Code
 
@@ -55,7 +43,18 @@
 - This comment should answer: “What is this file for?” “What kind of input/output does it handle?” and “What are its constraints?”
 - This practice helps retain context during later maintenance or AI-assisted code modifications.
 
-### 3.5 Cleanup
+### 3.5 Code Deduplication & Refactoring
+
+- Minimize code volume by actively identifying and eliminating duplicate logic
+- Use TypeScript MCP tools for systematic refactoring:
+  - `lsmcp_search_symbols` to find similar patterns across the codebase
+  - `lsmcp_find_references` to understand impact before refactoring
+  - `lsmcp_move_file` and `lsmcp_move_directory` for structural improvements
+  - `lsmcp_rename_symbol` for consistent naming across files
+- Proactively extract common patterns into reusable utilities
+- Before writing new code, search for existing implementations to extend or reuse
+
+### 3.6 Cleanup
 
 - Always shut down (kill) any servers or temporary resources (e.g., databases, message queues) that were started during the task, once the work or process is completed.
 - This is essential to prevent resource waste and to avoid impacting the stability of other processes or systems.
