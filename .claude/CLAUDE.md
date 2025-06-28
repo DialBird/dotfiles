@@ -37,6 +37,12 @@
 - Basically, follow the t-wada method.
 - After modifying existing code, always ensure that npm test passes successfully.
 
+#### Test Structure Guidelines
+- **Always wrap tests in describe blocks**: Each test file must have a main describe block that clearly identifies what is being tested (typically the function, class, or module name)
+- **Use nested describe blocks for different scenarios**: Group related test cases using nested describe blocks to organize tests by different conditions or use cases
+- **Write descriptive test names**: Test descriptions should clearly explain the expected behavior being verified
+- **Maintain consistent naming conventions**: Use consistent patterns for describe block names and test descriptions across the codebase
+
 ### 3.4 Self‑Describing Code
 
 - Each file must begin with a comment block that describes its purpose and specification in natural language.
