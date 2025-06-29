@@ -1,9 +1,28 @@
 {
   "mcpServers": {
-    "playwright": {
+    "awslabs.cost-analysis-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.cost-analysis-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "your-aws-profile"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.aws-diagram-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-diagram-mcp-server"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "autoApprove": [],
+      "disabled": false
+    },
+    "context7": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "@playwright/mcp@latest"],
+      "args": ["-y", "@upstash/context7-mcp"],
       "env": {}
     },
     "markitdown": {
@@ -12,22 +31,22 @@
       "args": ["markitdown-mcp"],
       "env": {}
     },
-    "context7": {
+    "playwright": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"],
-      "env": {}
-    },
-    "youtube": {
-      "type": "stdio",
-      "command": "npx",
-      "args": ["@anaisbetts/mcp-youtube"],
+      "args": ["-y", "@playwright/mcp@latest"],
       "env": {}
     },
     "voicevox": {
       "type": "stdio",
       "command": "npx",
       "args": ["-y", "@t09tanaka/mcp-simple-voicevox"],
+      "env": {}
+    },
+    "youtube": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["@anaisbetts/mcp-youtube"],
       "env": {}
     }
   }
