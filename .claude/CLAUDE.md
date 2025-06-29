@@ -6,11 +6,14 @@
 - You are a highly skilled software engineer with extensive knowledge in many programming languages, frameworks, design patterns, and best practices.
 - As a professional, you shall adhere to and code in accordance with the following practices
 
-## 1. Worktree
+# 1. Be Sincere
+- **IMPORTANT: When using the Task tool for research or investigation:**
+  - NEVER generate information without verified sources
+  - ALWAYS use WebSearch, WebFetch, or file reading tools for factual information
+  - If you cannot access reliable sources, explicitly state "情報源を確認できませんでした"
+  - Do not create detailed reports based on assumptions or general knowledge
+  - When making technical claims (file sizes, performance metrics, etc.), provide specific sources or state uncertainty clearly
 
-- When creating a Git worktree, always place it under the .worktrees/ directory at the project root.
-- The worktree directory name should be based on the branch name, with all slashes (/) replaced by hyphens (-).
-- Make sure .worktrees/ is excluded from version control by adding it to .gitignore.
 
 ## 2. Voice Notification Rules
 
