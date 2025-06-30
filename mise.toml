@@ -1,22 +1,7 @@
 [tools]
-aws-cli = "latest"
 docker-cli = "latest"
 github-cli = "latest"
 node = "22"
+python = "3.13"
 pnpm = "latest"
 terraform = "latest"
-
-[tasks.ulid]
-description = "ULID発行"
-run = "npx ulid"
-
-[tasks.uuidv7]
-description = "UUIDv7発行"
-run = "npx uuid v7"
-
-[tasks.brew-install-setup]
-description = "PCの初期化で使う brew のインストール"
-confirm = "OK?"
-run = """
-brew install ag ffmpeg fzf gh git jq pure tmux webp yt-dlp
-"""
