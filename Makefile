@@ -29,6 +29,25 @@ install: ## dotfilesをシンボリックリンクとしてインストール
 		fi; \
 	done
 	@echo "Installation completed!"
+	@echo "Setting up mise configuration..."
+	@if [ -e "$(DOTFILES_DIR)/mise.toml" ]; then \
+		mkdir -p "$(HOME)/.config/mise"; \
+		if [ -L "$(HOME)/.config/mise/config.toml" ]; then \
+			echo "mise config.toml is already a symlink, skipped"; \
+		elif [ -f "$(HOME)/.config/mise/config.toml" ]; then \
+			backup_path="$(HOME)/.config/mise/config.toml$(BACKUP_SUFFIX)"; \
+			mv "$(HOME)/.config/mise/config.toml" "$$backup_path"; \
+			ln -s "$(DOTFILES_DIR)/mise.toml" "$(HOME)/.config/mise/config.toml"; \
+			echo "mise config.toml backed up to $$(basename $$backup_path) and linked"; \
+		else \
+			ln -s "$(DOTFILES_DIR)/mise.toml" "$(HOME)/.config/mise/config.toml"; \
+			echo "mise config.toml linked"; \
+		fi; \
+		echo "mise setup completed!"; \
+	else \
+		echo "mise.toml not found in dotfiles directory, skipped"; \
+	fi
+
 
 clean: ## シンボリックリンクを削除
 	@echo "Removing dotfile symlinks..."

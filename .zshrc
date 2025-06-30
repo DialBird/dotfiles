@@ -118,7 +118,6 @@ function dimgtags() {
 # ------------------------------------------------------
 # Node / Deno
 # ------------------------------------------------------
-export PROTO_HOME="$HOME/.proto"
 export PATH="$PROTO_HOME:$PROTO_HOME/shims:$PROTO_HOME/tools/node/20.12.1/bin:$PATH"
 export PATH="$PROTO_HOME:$PROTO_HOME/shims:$PROTO_HOME/tools/node/22.15.0/bin:$PATH"
 export PATH="$HOME/.deno/bin:$PATH"

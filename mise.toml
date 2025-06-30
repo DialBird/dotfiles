@@ -1,0 +1,7 @@
+[tools]
+aws-cli = "latest"
+docker-cli = "latest"
+github-cli = "latest"
+node = "22"
+pnpm = "latest"
+terraform = "latest"
