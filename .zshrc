@@ -80,6 +80,7 @@ alias gchp='git cherry-pick'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gl='git log'
+alias gll='git log --oneline -n 5'
 alias gp='git push'
 alias gr='git reset'
 alias gs='git status'
@@ -88,6 +89,8 @@ alias gstk='git stash --keep-index'
 alias gich='git fetch'
 
 alias ghproj='open https://github.com/remotehour/remotehour/projects/2'
+
+alias ghb='gh browse'
 
 # ------------------------------------------------------
 # docker
