@@ -1,7 +1,12 @@
 [tools]
+aws = "latest"
 docker-cli = "latest"
 github-cli = "latest"
 node = "22"
 python = "3.13"
 pnpm = "latest"
 terraform = "latest"
+uv = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["python"]
