@@ -386,9 +386,10 @@ function dropboxconv() {
 # ------------------------------------------------------
 # etc
 # ------------------------------------------------------
-alias claude="$(which claude) --dangerously-skip-permissions"
-alias cc="claude"
-alias ccc="claude --continue"
+# alias cc="claude"
+# alias ccc="claude --continue"
+alias yolo="claude --dangerously-skip-permissions"
+alias yoloc="claude --dangerously-skip-permissions --continue"
 alias ctags="`brew --prefix`/bin/ctags"
 alias tmuxks="tmux kill-session"
 alias awscre="cat ~/.aws/credentials"
