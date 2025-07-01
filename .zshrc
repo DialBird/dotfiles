@@ -380,10 +380,8 @@ function dropboxconv() {
 # ------------------------------------------------------
 # etc
 # ------------------------------------------------------
-# alias cc="claude"
-# alias ccc="claude --continue"
-alias yolo="claude --dangerously-skip-permissions"
-alias yoloc="claude --dangerously-skip-permissions --continue"
+alias cc="claude --dangerously-skip-permissions"
+alias ccc="claude --dangerously-skip-permissions --continue"
 alias ctags="`brew --prefix`/bin/ctags"
 alias tmuxks="tmux kill-session"
 alias awscre="cat ~/.aws/credentials"
@@ -422,3 +420,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+alias claude="/Users/taniguchitakashiryou/.claude/local/claude"
