@@ -1,10 +1,9 @@
 [tools]
-aws = "latest"
 docker-cli = "latest"
 github-cli = "latest"
 node = "22"
-python = "3.13"
 pnpm = "latest"
+python = "3.13"
 terraform = "latest"
 uv = "latest"
 

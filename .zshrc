@@ -137,12 +137,6 @@ export PATH=/Applications/MAMP/bin/php/php$PHP_VERSION/bin:$PATH
 # ------------------------------------------------------
 # Python
 # ------------------------------------------------------
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
-
-fpath+=~/dotfiles/.zfunc
-autoload -Uz compinit && compinit
 
 # ------------------------------------------------------
 # Ruby
@@ -416,21 +410,6 @@ export CCMANAGER_CLAUDE_ARGS="--dangerously-skip-permissions"
 
 # vim -> nvim
 alias vim="nvim"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/taniguchitakashiryou/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/taniguchitakashiryou/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/taniguchitakashiryou/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/taniguchitakashiryou/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 # Shopify Hydrogen alias to local projects
 alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
