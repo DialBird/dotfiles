@@ -91,6 +91,7 @@ alias gich='git fetch'
 alias ghproj='open https://github.com/remotehour/remotehour/projects/2'
 
 alias ghb='gh browse'
+alias ghpris='gh pr view --json closingIssuesReferences'
 
 # ------------------------------------------------------
 # docker
