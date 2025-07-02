@@ -11,7 +11,6 @@
   - NEVER generate information without verified sources
   - ALWAYS use WebSearch, WebFetch, or file reading tools for factual information
   - If you cannot access reliable sources, explicitly state "情報源を確認できませんでした"
-  - Do not create detailed reports based on assumptions or general knowledge
   - When making technical claims (file sizes, performance metrics, etc.), provide specific sources or state uncertainty clearly
 
 

@@ -6,12 +6,15 @@
       "Bash(gh:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
+      "Bash(jq:*)",
       "Bash(ls:*)",
       "Bash(mkdir:*)",
+      "Bash(npx:*)",
       "Bash(pnpm add:*)",
       "Bash(pnpm dlx:*)",
       "Bash(pnpm run *)",
       "Bash(pnpm test:*)",
+      "Bash(xargs:*)",
       "Read(~/.zshrc)",
       "WebFetch(schema:https)"
     ],
@@ -19,5 +22,18 @@
       "Bash(curl:*)"
     ]
   },
-  "model": "sonnet"
+  "model": "sonnet",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path | select(endswith(\".js\") or endswith(\".ts\") or endswith(\".jsx\") or endswith(\".tsx\"))' | xargs -r npx biome check --fix"
+          }
+        ]
+      }
+    ]
+  }
 }
