@@ -413,11 +413,3 @@ alias vim="nvim"
 # Shopify Hydrogen alias to local projects
 alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
 eval "$(gh copilot alias -- zsh)"
-
-# pnpm
-export PNPM_HOME="/Users/taniguchitakashiryou/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
