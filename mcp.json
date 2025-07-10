@@ -38,6 +38,10 @@
       "args": ["markitdown-mcp"],
       "env": {}
     },
+    "notionApi": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.notion.com/sse"]
+    },
     "playwright": {
       "type": "stdio",
       "command": "npx",
