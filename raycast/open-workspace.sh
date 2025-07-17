@@ -17,28 +17,28 @@ workspace="$1"
 
 case "$workspace" in
 "zizai-lab")
-    cursor "/Users/taniguchitakashiryou/works/zizai-lab/zizai-lab-tasks"
+    kiro "/Users/taniguchitakashiryou/works/zizai-lab/zizai-lab-tasks"
     ;;
 "obsidian")
-    cursor "/Users/taniguchitakashiryou/Library/Mobile Documents/iCloud~md~obsidian/Documents/obsidian_knowledge/"
+    kiro "/Users/taniguchitakashiryou/Library/Mobile Documents/iCloud~md~obsidian/Documents/obsidian_knowledge/"
     ;;
 "zenn")
-    cursor "/Users/taniguchitakashiryou/works/zizai-lab/zenn"
+    kiro "/Users/taniguchitakashiryou/works/zizai-lab/zenn"
     ;;
 "dotfiles")
-    cursor "/Users/taniguchitakashiryou/dotfiles"
+    kiro "/Users/taniguchitakashiryou/dotfiles"
     ;;
 "vote2")
-    cursor "/Users/taniguchitakashiryou/works/4NEXT/Vote2"
+    kiro "/Users/taniguchitakashiryou/works/4NEXT/Vote2"
     ;;
 "shibutyo")
-    cursor "/Users/taniguchitakashiryou/works/zizai-lab/Chushindo/shibutyo"
+    kiro "/Users/taniguchitakashiryou/works/zizai-lab/Chushindo/shibutyo"
     ;;
 "dorian")
-    cursor "/Users/taniguchitakashiryou/works/zizai-lab/Dorian"
+    kiro "/Users/taniguchitakashiryou/works/zizai-lab/Dorian"
     ;;
 "feeep-resort")
-    cursor "/Users/taniguchitakashiryou/works/4NEXT/FEEEP-Resort"
+    kiro "/Users/taniguchitakashiryou/works/4NEXT/FEEEP-Resort"
     ;;
 *)
     echo "Error: Invalid workspace selection"
