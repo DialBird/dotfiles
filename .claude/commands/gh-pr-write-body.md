@@ -1,27 +1,40 @@
-# Create/Update PR Body Prompt
+# PR 本文作成・更新プロンプト
 
-- Please create/update the body of PR using the `gh` command.
-- The PR should focus on implementation details and changes, while referencing Issue for requirements and specifications.
-- Write the PR body in Japanese.
+- `gh`コマンドを使用して PR の本文を作成・更新してください。
+- PR は実装の詳細と変更点に焦点を当て、要件や仕様については Issue を参照するようにしてください。
+- PR 本文は日本語で記述してください。
 
-## Requirements
+## 要件
 
-- Use `gh pr edit <pr-number> --body` command with heredoc format
-- Do not reference related issues in the PR body (they are documented elsewhere)
-- Focus on **what was implemented** and **how**, not **why** (that's covered in the issue)
-- Include technical implementation details
-- List major changes and new files/directories
-- Specify verification steps completed
-- Note any deployment considerations
-- Mention breaking changes (if any)
+- `gh pr edit <pr-number> --body`コマンドを heredoc 形式で使用する
+- PR 本文内で関連 Issue を参照しない（他の場所で文書化されているため）
+- **なぜ**ではなく、**何を実装したか**と**どのように**に焦点を当てる（理由は Issue でカバー）
+- 技術的な実装詳細を含める
+- 主要な変更点と新しいファイル・ディレクトリを列挙する
+- 完了した検証手順を明記する
+- デプロイ時の考慮事項を記載する
+- 破壊的な変更があれば言及する
+- `gh pr diff`コマンドを活用して差分を理解し、変更内容を正確に把握する
 
-## Structure
+## 構成
 
-The PR body should include:
-1. **実装概要** - Brief overview of what was built
-2. **主要な変更点** - Key additions and modifications
-3. **技術的な実装** - Architecture and technology choices
-4. **依存関係** - New dependencies or changes
-5. **検証完了** - Tested functionality
-6. **デプロイの注意点** - Important setup/configuration details
-7. **破壊的な変更** - Any backwards incompatible changes
+PR 本文には以下を含める：
+
+1. **実装概要** - 構築した内容の簡潔な概要
+2. **主要な変更点** - 重要な追加と修正
+3. **技術的な実装** - アーキテクチャと技術選択
+4. **依存関係** - 新しい依存関係や変更
+5. **検証完了** - テスト済みの機能
+6. **デプロイの注意点** - 重要なセットアップ・設定の詳細
+7. **破壊的な変更** - 後方互換性のない変更
+
+## 差分の理解
+
+PR 作成前に以下のコマンドで変更内容を把握する：
+
+- `gh pr diff` - 現在の PR の差分を表示
+- `gh pr diff --name-only` - 変更されたファイル名のみ表示
+- `gh pr diff <file-path>` - 特定ファイルの差分のみ表示
+- `git diff HEAD~1` - 最新コミットとの差分を確認
+
+これらの差分情報を基に、実装内容を正確に記述し、見落としがないようにする。
