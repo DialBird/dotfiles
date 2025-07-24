@@ -78,6 +78,7 @@ alias gca='git commit --amend'
 alias gch='git checkout'
 alias gchp='git cherry-pick'
 alias gd='git diff'
+alias gdtxtlnt='git diff --cached --name-only --diff-filter=ACM | xargs npx textlint --config .textlintrc.json'
 alias gdc='git diff --cached'
 alias gl='git log'
 alias glog='git log --oneline --graph'
@@ -92,6 +93,25 @@ alias ghproj='open https://github.com/remotehour/remotehour/projects/2'
 
 alias ghb='gh browse'
 alias ghpris='gh pr view --json closingIssuesReferences'
+
+function ghprgrep() {
+  if [ $# -lt 2 ]; then
+    echo "使用法: ghprcommitgrep <PR番号> <検索ファイル名>"
+    echo "例: ghprcommitgrep 449 sample.ts"
+    return 1
+  fi
+  
+  local pr_number=$1
+  local search_file=$2
+  
+  gh pr view $pr_number --json commits --jq '.commits[].oid' | while read sha; do               
+    if git show --name-only --pretty="" "$sha" 2>/dev/null | grep -q "$search_file"; then 
+      echo "========================================="
+      git log -1 --format='Commit: %h%nAuthor: %an%nDate: %ad%nMessage: %s' "$sha"
+      echo "========================================="
+    fi
+  done
+}
 
 # ------------------------------------------------------
 # docker
@@ -118,6 +138,7 @@ function dimgtags() {
   fi
   docker images --format "{{.ID}}\t{{.Repository}}:{{.Tag}}" | grep "$1"
 }
+
 
 # ------------------------------------------------------
 # Node / Deno
