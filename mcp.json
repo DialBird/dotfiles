@@ -48,6 +48,15 @@
       "args": ["-y", "@playwright/mcp@latest"],
       "env": {}
     },
+    "serena": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena-mcp-server"
+      ]
+    },
     "voicevox": {
       "type": "stdio",
       "command": "npx",
