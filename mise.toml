@@ -1,4 +1,5 @@
 [tools]
+bun = "latest"
 deno = "latest"
 docker-cli = "latest"
 github-cli = "latest"
