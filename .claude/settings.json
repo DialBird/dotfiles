@@ -21,6 +21,5 @@
     "deny": [
       "Bash(curl:*)"
     ]
-  },
-  "model": "opus"
+  }
 }

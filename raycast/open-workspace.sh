@@ -16,26 +16,29 @@
 workspace="$1"
 
 case "$workspace" in
-"obsidian")
-    cursor "/Users/taniguchitakashiryou/Library/Mobile Documents/iCloud~md~obsidian/Documents/obsidian_knowledge/"
-    ;;
-"zenn")
-    cursor "/Users/taniguchitakashiryou/works/zizai-lab/zenn"
+"dorian")
+    cursor "/Users/taniguchitakashiryou/works/zizai-lab/Dorian"
     ;;
 "dotfiles")
     cursor "/Users/taniguchitakashiryou/dotfiles"
     ;;
-"vote2")
-    cursor "/Users/taniguchitakashiryou/works/4NEXT/Vote2"
+"feeep-resort")
+    cursor "/Users/taniguchitakashiryou/works/4NEXT/FEEEP-Resort"
+    ;;
+"NEXUS")
+    cursor "/Users/taniguchitakashiryou/works/4NEXT/NEXUS"
+    ;;
+"obsidian")
+    cursor "/Users/taniguchitakashiryou/Library/Mobile Documents/iCloud~md~obsidian/Documents/obsidian_knowledge/"
     ;;
 "shibutyo")
     cursor "/Users/taniguchitakashiryou/works/zizai-lab/Chushindo/shibutyo"
     ;;
-"dorian")
-    cursor "/Users/taniguchitakashiryou/works/zizai-lab/Dorian"
+"vote2")
+    cursor "/Users/taniguchitakashiryou/works/4NEXT/Vote2"
     ;;
-"feeep-resort")
-    cursor "/Users/taniguchitakashiryou/works/4NEXT/FEEEP-Resort"
+"zenn")
+    cursor "/Users/taniguchitakashiryou/works/zizai-lab/zenn"
     ;;
 *)
     echo "Error: Invalid workspace selection"

@@ -145,7 +145,7 @@ function dimgtags() {
 # Node / Deno
 # ------------------------------------------------------
 export PATH="$PROTO_HOME:$PROTO_HOME/shims:$PROTO_HOME/tools/node/20.12.1/bin:$PATH"
-export PATH="$PROTO_HOME:$PROTO_HOME/shims:$PROTO_HOME/tools/node/22.15.0/bin:$PATH"
+export PATH="$PROTO_HOME:$PROTO_HOME/shims:$PROTO_HOME/tools/node/22.17.0/bin:$PATH"
 export PATH="$HOME/.deno/bin:$PATH"
 
 # ------------------------------------------------------
@@ -191,6 +191,13 @@ export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
 # Flutter
 # ------------------------------------------------------
 export PATH=$HOME/development/flutter/bin:$PATH
+
+# ------------------------------------------------------
+# Android
+# ------------------------------------------------------
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+export ANDROID_HOME="$ANDROID_SDK_ROOT"
+export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin"
 
 # ------------------------------------------------------
 # gcloud
@@ -418,7 +425,8 @@ export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig"
 
-export JAVA_HOME="/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents"
+# export JAVA_HOME=/opt/homebrew/opt/openjdk
+export JAVA_HOME=/opt/homebrew/opt/openjdk@17
 export PATH="$JAVA_HOME/bin:$PATH"
 
 export PATH="/opt/homebrew/opt/libomp/bin:$PATH"
@@ -436,3 +444,8 @@ alias vim="nvim"
 # Shopify Hydrogen alias to local projects
 alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
 eval "$(gh copilot alias -- zsh)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/taniguchitakashiryou/.cache/lm-studio/bin"
+# End of LM Studio CLI section
+

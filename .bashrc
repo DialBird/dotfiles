@@ -85,3 +85,8 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Shopify Hydrogen alias to local projects
 alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/taniguchitakashiryou/.cache/lm-studio/bin"
+# End of LM Studio CLI section
+
