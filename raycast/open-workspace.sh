@@ -7,7 +7,7 @@
 
 # Optional parameters:
 # @raycast.icon 🤖
-# @raycast.argument1 { "type": "dropdown", "placeholder": "Select workspace", "data": [{"title": "Obsidian Knowledge", "value": "obsidian"}, {"title": "Zenn", "value": "zenn"}, {"title": "dotfiles", "value": "dotfiles"}, {"title": "Vote2", "value": "vote2"}, {"title": "Chushindo Shibutyo", "value": "shibutyo"}, {"title": "Dorian", "value": "dorian"}, {"title": "FEEEP Resort", "value": "feeep-resort"}, {"title": "NEXUS", "value": "NEXUS"}] }
+# @raycast.argument1 { "type": "dropdown", "placeholder": "Select workspace", "data": [{"title": "Zenn", "value": "zenn"}, {"title": "dotfiles", "value": "dotfiles"}, {"title": "Vote2", "value": "vote2"}, {"title": "Chushindo Shibutyo", "value": "shibutyo"}, {"title": "Dorian", "value": "dorian"}, {"title": "FEEEP Resort", "value": "feeep-resort"}, {"title": "NEXUS", "value": "nexus"}] }
 
 # Documentation:
 # @raycast.author dialbird
@@ -25,11 +25,8 @@ case "$workspace" in
 "feeep-resort")
     cursor "/Users/taniguchitakashiryou/works/4NEXT/FEEEP-Resort"
     ;;
-"NEXUS")
-    cursor "/Users/taniguchitakashiryou/works/zizai-lab/NEXUS"
-    ;;
-"obsidian")
-    cursor "/Users/taniguchitakashiryou/Library/Mobile Documents/iCloud~md~obsidian/Documents/obsidian_knowledge/"
+"nexus")
+    cursor "/Users/taniguchitakashiryou/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/NEXUS"
     ;;
 "shibutyo")
     cursor "/Users/taniguchitakashiryou/works/zizai-lab/Chushindo/shibutyo"
