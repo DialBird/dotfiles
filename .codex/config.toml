@@ -2,28 +2,13 @@ model = "gpt-5-codex"
 model_reasoning_effort = "medium"
 network_access = true
 
-[projects."/Users/taniguchitakashiryou/works/4NEXT/eduu"]
+[projects."/Users/taniguchitakashiryou/works/*"]
 trust_level = "trusted"
 
-[projects."/Users/taniguchitakashiryou/study/nextjs/codex-player"]
+[projects."/Users/taniguchitakashiryou/study/*"]
 trust_level = "trusted"
 
-[projects."/Users/taniguchitakashiryou/study/network/network-simulator"]
-trust_level = "trusted"
-
-[projects."/Users/taniguchitakashiryou/study/reactnative/my-app"]
-trust_level = "trusted"
-
-[projects."/Users/taniguchitakashiryou/works/zizai-lab/sasaki-ai"]
-trust_level = "trusted"
-
-[projects."/Users/taniguchitakashiryou/study/hono/hono-test"]
-trust_level = "trusted"
-
-[projects."/Users/taniguchitakashiryou/works/4NEXT/FEEEP-Resort"]
-trust_level = "trusted"
-
-[projects."/Users/taniguchitakashiryou"]
+[projects."/Users/taniguchitakashiryou/dotfiles"]
 trust_level = "trusted"
 
 [mcp_servers.arxiv-mcp-server]
@@ -36,6 +21,10 @@ args = ["awslabs.aws-diagram-mcp-server"]
 
 [mcp_servers.aws-diagram-mcp-server.env]
 FASTMCP_LOG_LEVEL = "ERROR"
+
+[mcp_servers.aws-knowledge-mcp-server]
+command = "uvx"
+args = ["fastmcp", "run", "https://knowledge-mcp.global.api.aws"]
 
 [mcp_servers.chrome-devtools]
 command = "npx"
