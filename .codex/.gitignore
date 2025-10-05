@@ -1,0 +1,15 @@
+# 認証情報
+auth.json
+
+# 履歴とセッション
+history.jsonl
+sessions/
+
+# ログファイル
+log/
+
+# 内部ストレージ
+internal_storage.json
+
+# バージョン情報
+version.json

@@ -1,0 +1,69 @@
+model = "gpt-5-codex"
+model_reasoning_effort = "medium"
+network_access = true
+
+[projects."/Users/taniguchitakashiryou/works/4NEXT/eduu"]
+trust_level = "trusted"
+
+[projects."/Users/taniguchitakashiryou/study/nextjs/codex-player"]
+trust_level = "trusted"
+
+[projects."/Users/taniguchitakashiryou/study/network/network-simulator"]
+trust_level = "trusted"
+
+[projects."/Users/taniguchitakashiryou/study/reactnative/my-app"]
+trust_level = "trusted"
+
+[projects."/Users/taniguchitakashiryou/works/zizai-lab/sasaki-ai"]
+trust_level = "trusted"
+
+[projects."/Users/taniguchitakashiryou/study/hono/hono-test"]
+trust_level = "trusted"
+
+[projects."/Users/taniguchitakashiryou/works/4NEXT/FEEEP-Resort"]
+trust_level = "trusted"
+
+[projects."/Users/taniguchitakashiryou"]
+trust_level = "trusted"
+
+[mcp_servers.arxiv-mcp-server]
+command = "uvx"
+args = ["arxiv-mcp-server"]
+
+[mcp_servers.aws-diagram-mcp-server]
+command = "uvx"
+args = ["awslabs.aws-diagram-mcp-server"]
+
+[mcp_servers.aws-diagram-mcp-server.env]
+FASTMCP_LOG_LEVEL = "ERROR"
+
+[mcp_servers.chrome-devtools]
+command = "npx"
+args = ["chrome-devtools-mcp@latest"]
+
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp"]
+
+[mcp_servers.figma]
+command = "npx"
+args = ["-y", "mcp-remote", "http://127.0.0.1:3845/sse"]
+
+[mcp_servers.playwright]
+command = "npx"
+args = ["-y", "@playwright/mcp"]
+
+[mcp_servers.terraform-mcp-server]
+command = "uvx"
+args = ["awslabs.terraform-mcp-server"]
+
+[mcp_servers.terraform-mcp-server.env]
+FASTMCP_LOG_LEVEL = "ERROR"
+
+[mcp_servers.voicevox]
+command = "npx"
+args = ["-y", "@t09tanaka/mcp-simple-voicevox"]
+
+[mcp_servers.youtube]
+command = "npx"
+args = ["@anaisbetts/mcp-youtube"]
