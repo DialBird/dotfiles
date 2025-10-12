@@ -11,6 +11,9 @@ trust_level = "trusted"
 [projects."/Users/taniguchitakashiryou/dotfiles"]
 trust_level = "trusted"
 
+[projects."/Users/taniguchitakashiryou/works/4NEXT/eduu"]
+trust_level = "trusted"
+
 [mcp_servers.arxiv-mcp-server]
 command = "uvx"
 args = ["arxiv-mcp-server"]
