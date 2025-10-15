@@ -7,7 +7,7 @@
 
 # Optional parameters:
 # @raycast.icon 🤖
-# @raycast.argument1 { "type": "dropdown", "placeholder": "Select workspace", "data": [{"title": "Zenn", "value": "zenn"}, {"title": "dotfiles", "value": "dotfiles"}, {"title": "Vote2", "value": "vote2"}, {"title": "Chushindo Shibutyo", "value": "shibutyo"}, {"title": "Dorian", "value": "dorian"}, {"title": "FEEEP Resort", "value": "feeep-resort"}, {"title": "NEXUS", "value": "nexus"}] }
+# @raycast.argument1 { "type": "dropdown", "placeholder": "Select workspace", "data": [{"title": "Zenn", "value": "zenn"}, {"title": "dotfiles", "value": "dotfiles"}, {"title": "Scoutee", "value": "scoutee"}, {"title": "Chushindo Shibutyo", "value": "shibutyo"}, {"title": "Dorian", "value": "dorian"}, {"title": "FEEEP Resort", "value": "feeep-resort"}, {"title": "NEXUS", "value": "nexus"}] }
 
 # Documentation:
 # @raycast.author dialbird
@@ -31,8 +31,8 @@ case "$workspace" in
 "shibutyo")
     cursor "/Users/taniguchitakashiryou/works/zizai-lab/Chushindo/shibutyo"
     ;;
-"vote2")
-    cursor "/Users/taniguchitakashiryou/works/4NEXT/Vote2"
+"scoutee")
+    cursor "/Users/taniguchitakashiryou/works/4NEXT/Scoutee"
     ;;
 "zenn")
     cursor "/Users/taniguchitakashiryou/works/zizai-lab/zenn"
