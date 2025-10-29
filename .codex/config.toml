@@ -1,5 +1,5 @@
 model = "gpt-5-codex"
-model_reasoning_effort = "medium"
+model_reasoning_effort = "high"
 network_access = true
 
 [projects."/Users/taniguchitakashiryou/works/*"]
@@ -12,6 +12,9 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [projects."/Users/taniguchitakashiryou/works/4NEXT/eduu"]
+trust_level = "trusted"
+
+[projects."/Users/taniguchitakashiryou/works/4NEXT/Scoutee"]
 trust_level = "trusted"
 
 [mcp_servers.arxiv-mcp-server]
